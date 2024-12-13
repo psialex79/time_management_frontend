@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     async function fetchInitData() {
       const data = await getTelegramInitData();
-      setInitData(data); // Здесь можно передать данные initData в приложение
+      setInitData(data);
       setIsLoading(false);
     }
 
@@ -18,24 +18,24 @@ function App() {
   }, []);
 
   if (isLoading) {
-    // Стартовая страница отображается, пока идет загрузка
     return (
       <div className="app-container">
         <h1 className="app-title">это ТВОЁ время</h1>
         <AnimatedBox />
       </div>
     );
+  } else {
+    return (
+      <div className="app-container">
+        <h1 className="app-title">Добро пожаловать!</h1>
+        <p>
+          {initData
+            ? `Ваши данные: ${JSON.stringify(initData)}`
+            : "Нет данных."}
+        </p>
+      </div>
+    );
   }
-
-  // Основная логика приложения после загрузки initData
-  return (
-    <div className="app-container">
-      <h1 className="app-title">Добро пожаловать!</h1>
-      <p>
-        {initData ? `Ваши данные: ${JSON.stringify(initData)}` : "Нет данных."}
-      </p>
-    </div>
-  );
 }
 
 export default App;
