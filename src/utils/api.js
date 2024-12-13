@@ -1,5 +1,5 @@
 export async function sendInitDataToBackend(initData) {
-  const backendUrl = "https://1c97-223-24-169-246.ngrok-free.app/authorize"; // URL эндпоинта бэкенда
+  const backendUrl = "https://b25b-49-237-17-185.ngrok-free.app/authorize"; // URL эндпоинта бэкенда
 
   try {
     const response = await fetch(backendUrl, {
