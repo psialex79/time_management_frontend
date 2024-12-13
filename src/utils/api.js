@@ -5,7 +5,7 @@ export async function sendInitDataToBackend(initData) {
     const response = await fetch(backendUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "text/plain",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ initData }),
     });
