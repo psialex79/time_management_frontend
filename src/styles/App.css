@@ -1,0 +1,21 @@
+/* App */
+.app-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.app-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 1rem;
+}
