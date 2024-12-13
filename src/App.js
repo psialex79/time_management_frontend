@@ -1,4 +1,6 @@
+import React from "react";
 import "./styles/App.css";
+import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
 
 function App() {
   return (
@@ -7,6 +9,7 @@ function App() {
       <p className="app-description">
         Добро пожаловать! Здесь вы можете управлять своим временем.
       </p>
+      <AnimatedBox />
     </div>
   );
 }
