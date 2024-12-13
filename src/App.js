@@ -5,7 +5,7 @@ import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
 function App() {
   return (
     <div className="app-container">
-      <h1 className="app-title">Time Management App</h1>
+      <h1 className="app-title">это ТВОЁ время</h1>
       <AnimatedBox />
     </div>
   );

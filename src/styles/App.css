@@ -1,21 +1,19 @@
 /* App */
 .app-container {
-  text-align: center;
+  position: relative;
+  width: 384px;
+  height: 703px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  text-align: center;
+  background-color: #f4f4f4;
+  overflow: hidden;
 }
 
 .app-title {
-  font-size: 1.5rem;
+  position: relative;
+  font-size: 24px;
   color: #333;
-  margin: 0.5rem 0;
-}
-
-.app-description {
-  font-size: 1rem;
-  color: #555;
-  margin: 0.5rem 1rem;
+  z-index: 2;
 }
