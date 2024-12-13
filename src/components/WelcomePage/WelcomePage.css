@@ -1,0 +1,9 @@
+.welcome-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  color: #2d87f0;
+}

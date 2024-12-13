@@ -1,41 +1,35 @@
 import React, { useEffect, useState } from "react";
 import "./styles/App.css";
 import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
+import WelcomePage from "./components/WelcomePage/WelcomePage";
 import { getTelegramInitData } from "./utils/telegramInitData";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
   const [initData, setInitData] = useState(null);
 
   useEffect(() => {
     async function fetchInitData() {
       const data = await getTelegramInitData();
-      setInitData(data);
-      setIsLoading(false);
+      if (data) {
+        setInitData(data); // Устанавливаем данные, если они получены
+      }
     }
 
     fetchInitData();
   }, []);
 
-  if (isLoading) {
+  // Показываем "это ТВОЁ время", пока initData не получены
+  if (!initData) {
     return (
       <div className="app-container">
         <h1 className="app-title">это ТВОЁ время</h1>
         <AnimatedBox />
       </div>
     );
-  } else {
-    return (
-      <div className="app-container">
-        <h1 className="app-title">Добро пожаловать!</h1>
-        <p>
-          {initData
-            ? `Ваши данные: ${JSON.stringify(initData)}`
-            : "Нет данных."}
-        </p>
-      </div>
-    );
   }
+
+  // Показываем "Добро пожаловать!" при успешном получении данных
+  return <WelcomePage initData={initData} />;
 }
 
 export default App;
