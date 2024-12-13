@@ -1,13 +1,13 @@
 export async function sendInitDataToBackend(initData) {
-  const backendUrl = "https://e1df-49-237-17-185.ngrok-free.app/authorize"; // URL эндпоинта бэкенда
+  const backendUrl = "https://e1df-49-237-17-185.ngrok-free.app/authorize";
 
   try {
     const response = await fetch(backendUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain",
       },
-      body: JSON.stringify({ initData }), // Передаём initData в теле запроса
+      body: JSON.stringify({ initData }),
     });
 
     if (!response.ok) {
