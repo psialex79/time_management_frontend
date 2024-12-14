@@ -6,7 +6,6 @@ import { getTelegramInitData } from "./utils/telegramInitData";
 import { sendInitDataToBackend } from "./utils/api";
 
 function App() {
-  const [initData, setInitData] = useState(null); // Данные Telegram
   const [backendResponse, setBackendResponse] = useState(null); // Ответ от бэкенда
   const [loading, setLoading] = useState(true); // Состояние загрузки
 
@@ -14,14 +13,13 @@ function App() {
     async function fetchAndSendInitData() {
       const data = await getTelegramInitData();
       if (data) {
-        setInitData(data); // Устанавливаем данные Telegram
         try {
           const response = await sendInitDataToBackend(data); // Отправляем данные на бэкенд
           setBackendResponse(response); // Устанавливаем ответ от бэкенда
         } catch (error) {
           console.error(
             "Ошибка при отправке данных на бэкенд: ",
-            initData,
+            data, // Используем актуальные данные
             error
           );
           setBackendResponse(null); // Если ошибка, сбрасываем ответ
@@ -34,7 +32,7 @@ function App() {
     }
 
     fetchAndSendInitData();
-  }, []);
+  }, []); // Пустой массив зависимостей, чтобы эффект выполнялся только один раз при монтировании компонента
 
   // Показываем "это ТВОЁ время", пока initData или ответ от бэкенда не готовы
   if (loading || !backendResponse) {
