@@ -9,7 +9,7 @@ function NameInput({ value, onChange }) {
         id="name"
         value={value}
         onChange={onChange}
-        placeholder="Введите имя клиента"
+        placeholder="Имя клиента"
         required
       />
     </div>

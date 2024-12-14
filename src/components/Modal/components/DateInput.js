@@ -5,7 +5,7 @@ function DateInput({ value, onChange }) {
 
   useEffect(() => {
     const today = new Date();
-    const formattedDate = today.toISOString().split("T")[0]; // Получаем дату в формате YYYY-MM-DD
+    const formattedDate = today.toISOString().split("T")[0]; // Формат: YYYY-MM-DD
     setCurrentDate(formattedDate);
   }, []);
 
@@ -15,7 +15,7 @@ function DateInput({ value, onChange }) {
       <input
         type="date"
         id="date"
-        value={value || currentDate} // Используем значение или текущую дату
+        value={value || currentDate}
         onChange={onChange}
         required
       />
