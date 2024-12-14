@@ -8,7 +8,7 @@ import Modal from "../Modal/Modal"; // Импортируем модальное
 function WelcomePage({ backendResponse }) {
   const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
 
-  const { message, postAuthResponse } = backendResponse?.postAuthResponse || {};
+  const { message, postAuthResponse } = backendResponse || {};
 
   // Функции для открытия и закрытия модального окна
   const openModal = () => setIsModalOpen(true);
