@@ -10,7 +10,6 @@ function WelcomePage({ backendResponse }) {
 
   return (
     <div className="welcome-container">
-      <h1 className="welcome-title">Добро пожаловать!</h1>
       {message ? (
         // Если сообщение "Записи отсутствуют", отображаем сообщение
         <StatusMessage message={message} />
