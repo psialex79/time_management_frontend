@@ -5,7 +5,7 @@ function TimeInput({ value, onChange }) {
     <div className="input-field">
       <label htmlFor="time">Время (Часы:Минуты):</label>
       <input
-        type="text"
+        type="time"
         id="time"
         value={value}
         onChange={onChange}
