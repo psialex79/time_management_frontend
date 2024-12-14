@@ -13,7 +13,7 @@ function DateInput({ value, onChange }) {
 
   return (
     <div className="input-field">
-      <label htmlFor="date">Дата (Месяц.Число):</label>
+      <label htmlFor="date">День: </label>
       <input
         type="date" // Изменяем тип на date
         id="date"
