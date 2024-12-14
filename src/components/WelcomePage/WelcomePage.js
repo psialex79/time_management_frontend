@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./WelcomePage.css";
 import StatusMessage from "./components/StatusMessage";
 import RecordsList from "./components/RecordsList";
@@ -8,23 +8,32 @@ import Modal from "../Modal/Modal"; // Импортируем модальное
 function WelcomePage({ backendResponse }) {
   const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
 
-  const { message, records } = backendResponse?.postAuthResponse || {};
+  const { message, postAuthResponse } = backendResponse?.postAuthResponse || {};
 
   // Функции для открытия и закрытия модального окна
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (backendResponse?.postAuthResponse) {
+      setIsLoading(false);
+    }
+  }, [backendResponse]);
+
   return (
     <div className="welcome-container">
-      {message ? (
-        // Если сообщение "Записи отсутствуют", отображаем сообщение
-        <StatusMessage message={message} />
-      ) : (
+      {isLoading ? (
         <StatusMessage message="Загрузка..." />
+      ) : (
+        <StatusMessage message={message} />
       )}
 
       {/* Если записи присутствуют, отображаем их */}
-      {records && records.length > 0 ? <RecordsList records={records} /> : null}
+      {postAuthResponse && postAuthResponse.length > 0 ? (
+        <RecordsList records={postAuthResponse} />
+      ) : null}
 
       {/* Отображаем иконку в правом нижнем углу */}
       <IconButton onClick={openModal} />
