@@ -7,8 +7,6 @@ export async function getTelegramInitData() {
     const initData = window.Telegram.WebApp.initData;
     if (!initData) {
       throw new Error("initData отсутствует.");
-    } else {
-      console.log("initData: ", initData);
     }
 
     return initData;

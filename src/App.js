@@ -43,7 +43,7 @@ function App() {
   }
 
   // Показываем "Добро пожаловать!" при успешном получении ответа от бэкенда
-  return <WelcomePage initData={initData} backendResponse={backendResponse} />;
+  return <WelcomePage backendResponse={backendResponse} />;
 }
 
 export default App;

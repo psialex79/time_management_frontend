@@ -16,7 +16,6 @@ export async function sendInitDataToBackend(initData) {
     }
 
     const data = await response.json();
-    console.log("Данные от бэкенда:", data);
     return data;
   } catch (error) {
     console.error("Ошибка при отправке initData на бэкенд:", error);
