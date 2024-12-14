@@ -7,3 +7,52 @@
   font-size: 2rem;
   color: #2d87f0;
 }
+
+.status-message {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+.records-list {
+  text-align: left;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.records-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.records-list li {
+  padding: 8px;
+  background-color: #f5f5f5;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.records-list li strong {
+  color: #2d87f0;
+}
+
+.icon-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid #ee69a9;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
