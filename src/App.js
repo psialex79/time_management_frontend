@@ -19,7 +19,11 @@ function App() {
           const response = await sendInitDataToBackend(data); // Отправляем данные на бэкенд
           setBackendResponse(response); // Устанавливаем ответ от бэкенда
         } catch (error) {
-          console.error("Ошибка при отправке данных на бэкенд:", error);
+          console.error(
+            "Ошибка при отправке данных на бэкенд: ",
+            initData,
+            error
+          );
           setBackendResponse(null); // Если ошибка, сбрасываем ответ
         } finally {
           setLoading(false); // Окончание загрузки
