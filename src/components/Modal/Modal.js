@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
 import NameInput from "./components/NameInput";
+import { sendFormData } from "../../utils/newMeeting";
+import { getTelegramInitData } from "../../utils/telegramInitData";
 import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
@@ -9,10 +11,31 @@ function Modal({ isOpen, onClose }) {
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Логика отправки данных формы
-    console.log("Form submitted:", { date, time, name });
+
+    const formData = { date, time, name }; // Собираем данные формы
+
+    try {
+      // Получаем initData из Telegram WebApp
+      const initData = await getTelegramInitData();
+      if (initData) {
+        // Добавляем initData к formData
+        formData.initData = initData;
+      }
+    } catch (error) {
+      console.error("Ошибка при получении initData:", error);
+    }
+
+    // Отправляем данные на сервер
+    const response = await sendFormData(formData);
+
+    if (response) {
+      console.log("Данные успешно отправлены:", response);
+    } else {
+      console.error("Ошибка при отправке данных.");
+    }
+
     onClose(); // Закрываем модальное окно после отправки
   };
 
@@ -24,7 +47,6 @@ function Modal({ isOpen, onClose }) {
         <button className="modal-close-btn" onClick={onClose}>
           X
         </button>
-        <h2>Заполните форму</h2>
         <form onSubmit={handleSubmit}>
           <DateInput value={date} onChange={(e) => setDate(e.target.value)} />
           <TimeInput value={time} onChange={(e) => setTime(e.target.value)} />

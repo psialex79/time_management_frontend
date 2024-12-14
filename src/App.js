@@ -3,7 +3,7 @@ import "./styles/App.css";
 import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import { getTelegramInitData } from "./utils/telegramInitData";
-import { sendInitDataToBackend } from "./utils/api";
+import { sendInitDataToBackend } from "./utils/authorize";
 
 function App() {
   const [backendResponse, setBackendResponse] = useState(null); // Ответ от бэкенда

@@ -11,7 +11,6 @@ function DateInput({ value, onChange }) {
 
   return (
     <div className="input-field">
-      <label htmlFor="date">Дата:</label>
       <input
         type="date"
         id="date"
