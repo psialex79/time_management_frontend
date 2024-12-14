@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./WelcomePage.css";
 import StatusMessage from "./components/StatusMessage";
 import RecordsList from "./components/RecordsList";
 import IconButton from "./components/IconButton"; // Импортируем компонент иконки
+import Modal from "../Modal/Modal"; // Импортируем модальное окно
 
 function WelcomePage({ backendResponse }) {
-  // Проверяем, есть ли данные от бэкенда
+  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
+
   const { message, records } = backendResponse?.postAuthResponse || {};
+
+  // Функции для открытия и закрытия модального окна
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="welcome-container">
@@ -21,7 +27,10 @@ function WelcomePage({ backendResponse }) {
       {records && records.length > 0 ? <RecordsList records={records} /> : null}
 
       {/* Отображаем иконку в правом нижнем углу */}
-      <IconButton />
+      <IconButton onClick={openModal} />
+
+      {/* Модальное окно */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }
