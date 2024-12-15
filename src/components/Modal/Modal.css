@@ -119,3 +119,9 @@ h2 {
   width: 25px;
   height: 25px;
 }
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 10px;
+}
