@@ -1,8 +1,6 @@
 /* App */
 .app-container {
   position: relative;
-  width: 384px;
-  height: 703px;
   display: flex;
   justify-content: center;
   align-items: center;

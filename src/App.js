@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./styles/App.css";
 import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
-import Header from "./components/Header/Header"; // Импортируем Header
-import Footer from "./components/Footer/Footer"; // Импортируем Footer
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import { getTelegramInitData } from "./utils/telegramInitData";
 import { sendInitDataToBackend } from "./utils/authorize";
 
