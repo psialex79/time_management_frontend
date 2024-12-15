@@ -57,6 +57,21 @@ h2 {
   color: white;
   background-color: black;
   transition: border 0.3s ease-in-out;
+
+  /* Убираем внутреннюю тень при фокусе */
+  outline: none;
+  box-shadow: none;
+}
+
+/* Состояние фокуса */
+.input-field input:focus {
+  border-color: #ee69a9; /* Цвет рамки при фокусе */
+}
+
+/* Убираем стили автозаполнения в Chrome */
+.input-field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px black inset !important; /* Сохраняем черный фон */
+  -webkit-text-fill-color: white !important; /* Цвет текста при автозаполнении */
 }
 
 .input-field input:focus {
