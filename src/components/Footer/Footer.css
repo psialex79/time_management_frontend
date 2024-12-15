@@ -6,7 +6,7 @@
   justify-content: center;
   border-top: 2px solid #ee69a9;
   position: fixed;
-  bottom: 0;
+  bottom: 50px;
   z-index: 1000;
 }
 
