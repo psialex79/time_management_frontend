@@ -32,7 +32,10 @@ function WelcomePage({ backendResponse }) {
       ) : null}
 
       {/* Отображаем иконку в правом нижнем углу */}
-      <IconButton onClick={openModal} />
+      <IconButton
+        onClick={openModal}
+        extraClass={hasNoRecords ? "glowing-button" : ""}
+      />
 
       {/* Модальное окно */}
       <Modal isOpen={isModalOpen} onClose={closeModal} />

@@ -78,3 +78,22 @@
     opacity: 0;
   }
 }
+
+/* Подсвечивающаяся кнопка с анимацией */
+.glowing-button {
+  animation: glow 1.5s infinite;
+  border-color: #ee69a9; /* Цвет рамки */
+}
+
+/* Эффект сияния */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #ee69a9;
+  }
+  50% {
+    box-shadow: 0 0 15px #ee69a9;
+  }
+  100% {
+    box-shadow: 0 0 5px #ee69a9;
+  }
+}
