@@ -5,13 +5,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: black;
+  background-color: var(--bg-color);
   height: 100vh;
 }
 
 .app-title {
   position: relative;
   font-size: 24px;
-  color: #ffffff;
+  color: var(--text-color);
   z-index: 2;
 }

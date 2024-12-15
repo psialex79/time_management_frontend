@@ -1,6 +1,19 @@
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --accent-text-color: #168acd;
+  --bg-color: #ffffff;
+  --bottom-bar-bg-color: #ffffff;
+  --button-color: #40a7e3;
+  --button-text-color: #ffffff;
+  --destructive-text-color: #d14e4e;
+  --header-bg-color: #ffffff;
+  --hint-color: #999999;
+  --link-color: #168acd;
+  --secondary-bg-color: #f1f1f1;
+  --section-bg-color: #ffffff;
+  --section-header-text-color: #168acd;
+  --section-separator-color: #e7e7e7;
+  --subtitle-text-color: #999999;
+  --text-color: #000000;
 }
 
 body {
@@ -13,11 +26,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 #root {
-  background: #000;
-  color: #fff;
+  background: var(--bg-color);
+  color: var(--text-color);
   overflow: hidden;
 }
