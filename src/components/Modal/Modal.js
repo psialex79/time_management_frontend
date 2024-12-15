@@ -1,3 +1,12 @@
+import React, { useState } from "react";
+import DateInput from "./components/DateInput";
+import TimeInput from "./components/TimeInput";
+import NameInput from "./components/NameInput";
+import SubmitButton from "./components/SubmitButton";
+import { sendFormData } from "../../utils/newMeeting";
+import { getTelegramInitData } from "../../utils/telegramInitData";
+import "./Modal.css";
+
 function Modal({ isOpen, onClose }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
