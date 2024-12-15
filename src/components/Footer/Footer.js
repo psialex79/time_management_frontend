@@ -10,13 +10,10 @@ function IconButton({ onClick, extraClass }) {
   );
 }
 
-function Footer({ openModal, hasNoRecords }) {
+function Footer({ openModal }) {
   return (
     <footer className="footer">
-      <IconButton
-        onClick={openModal}
-        extraClass={hasNoRecords ? "glowing-button" : ""}
-      />
+      <IconButton onClick={openModal} />
     </footer>
   );
 }

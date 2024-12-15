@@ -6,7 +6,7 @@
   height: 60px;
   justify-content: center;
   position: fixed;
-  max-width: 384px;
+  width: 300px;
   z-index: 1000;
 }
 

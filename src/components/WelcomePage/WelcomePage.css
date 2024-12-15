@@ -31,19 +31,9 @@
 }
 
 .icon-button {
-  align-items: center;
-  border: 1.5px solid #ee69a9;
-  border-radius: 50%;
-  bottom: 118px;
   cursor: pointer;
-  display: flex;
-  height: 25px;
-  justify-content: center;
-  padding: 10px;
-  position: absolute;
-  right: 168px;
-  width: 25px;
-  z-index: 1001;
+  height: 32px;
+  width: 32px;
 }
 
 .icon-button img {

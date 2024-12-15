@@ -4,12 +4,14 @@ import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Modal from "./components/Modal/Modal";
 import { getTelegramInitData } from "./utils/telegramInitData";
 import { sendInitDataToBackend } from "./utils/authorize";
 
 function App() {
   const [backendResponse, setBackendResponse] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для открытия модального окна
 
   useEffect(() => {
     async function fetchAndSendInitData() {
@@ -32,6 +34,10 @@ function App() {
     fetchAndSendInitData();
   }, []);
 
+  // Функция для открытия модального окна
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   if (loading || !backendResponse) {
     return (
       <div className="app-container">
@@ -45,7 +51,10 @@ function App() {
     <div className="app-container">
       <Header />
       <WelcomePage backendResponse={backendResponse} />
-      <Footer />
+      <Footer openModal={openModal} />{" "}
+      {/* Передаем функцию openModal в Footer */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />{" "}
+      {/* Управляем модальным окном */}
     </div>
   );
 }
