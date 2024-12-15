@@ -14,12 +14,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: black;
 }
 
 #root {
-  width: 384px;
-  height: 703px;
   overflow: hidden;
   margin-top: 60px;
   background: black;
