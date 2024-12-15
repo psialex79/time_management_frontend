@@ -7,6 +7,7 @@ import Modal from "../Modal/Modal"; // Импортируем модальное
 
 function WelcomePage({ backendResponse }) {
   const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
+  const [isLoading, setIsLoading] = useState(true);
 
   const { postAuthResponse } = backendResponse || {};
 
@@ -14,13 +15,14 @@ function WelcomePage({ backendResponse }) {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     if (backendResponse?.postAuthResponse) {
       setIsLoading(false);
     }
   }, [backendResponse]);
+
+  // Проверка на наличие записей
+  const hasNoRecords = !postAuthResponse || postAuthResponse.length === 0;
 
   return (
     <div className="welcome-container">
