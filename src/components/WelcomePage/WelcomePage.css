@@ -8,13 +8,15 @@
 
 .status-message {
   font-size: 1.2rem;
-  color: #333;
+  color: #000000;
   margin: 20px 0;
 }
 
 .records-list {
-  text-align: left;
   display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 300px;
 }
 
 .records-list ul {
