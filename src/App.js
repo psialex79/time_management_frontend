@@ -35,10 +35,8 @@ function App() {
   if (loading || !backendResponse) {
     return (
       <div className="app-container">
-        <Header />
         <h1 className="app-title">это ТВОЁ время</h1>
         <AnimatedBox />
-        <Footer />
       </div>
     );
   }

@@ -1,0 +1,38 @@
+.date-time-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.date {
+  font-weight: 400;
+}
+
+.time {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.hours,
+.minutes {
+  font-size: 1.2rem;
+}
+
+.colon {
+  margin: 0 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
