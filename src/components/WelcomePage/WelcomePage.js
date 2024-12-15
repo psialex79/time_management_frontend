@@ -24,7 +24,8 @@ function WelcomePage({ backendResponse }) {
   // Проверка на наличие записей
   const hasNoRecords =
     !postAuthResponse ||
-    (Array.isArray(postAuthResponse) && postAuthResponse.length === 0);
+    (Array.isArray(postAuthResponse) && postAuthResponse.length === 0) ||
+    (postAuthResponse.message && typeof postAuthResponse.message === "string");
 
   console.log("postAuthResponse:", postAuthResponse);
   console.log("hasNoRecords:", hasNoRecords);
