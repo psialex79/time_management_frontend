@@ -57,7 +57,7 @@ function RecordsList({ records }) {
       <ul>
         {records.map((record, index) => (
           <li key={index}>
-            {record.record_date} | {record.record_time} | {record.client_name}
+            {record.record_date} - {record.record_time} - {record.client_name}
             {record.comment && <div>{record.comment}</div>}
           </li>
         ))}

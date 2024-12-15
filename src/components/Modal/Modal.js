@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
 import NameInput from "./components/NameInput";
+import SubmitButton from "./components/SubmitButton";
 import { sendFormData } from "../../utils/newMeeting";
 import { getTelegramInitData } from "../../utils/telegramInitData";
 import "./Modal.css";
@@ -51,9 +52,7 @@ function Modal({ isOpen, onClose }) {
           <DateInput value={date} onChange={(e) => setDate(e.target.value)} />
           <TimeInput value={time} onChange={(e) => setTime(e.target.value)} />
           <NameInput value={name} onChange={(e) => setName(e.target.value)} />
-          <button type="submit" className="submit-btn">
-            Отправить
-          </button>
+          <SubmitButton onClick={handleSubmit} />
         </form>
       </div>
     </div>

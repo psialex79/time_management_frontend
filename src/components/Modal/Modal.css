@@ -12,11 +12,8 @@
 }
 
 .modal-container {
-  background: black;
   padding: 20px;
   border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
@@ -71,23 +68,24 @@ h2 {
   color: rgba(255, 255, 255, 0.925);
 }
 
-/* Кнопка отправки */
-.submit-btn {
-  width: 100%;
-  padding: 12px;
-  background: #ee69a9;
-  color: black;
+.submit-button {
+  background-color: transparent;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.submit-btn:hover {
-  background: #cc5a91;
+.submit-icon {
+  width: 25px; /* Размер иконки */
+  height: 25px;
+  filter: invert(22%) sepia(69%) saturate(4103%) hue-rotate(318deg)
+    brightness(91%) contrast(99%);
+  transition: transform 0.3s ease;
 }
 
-.submit-btn:active {
-  background: #aa4c79;
+.submit-button:hover .submit-icon {
+  transform: scale(1.1); /* Увеличение при наведении */
 }
