@@ -75,7 +75,7 @@ h2 {
 
 .input-field input:focus {
   outline: none;
-  border-color: #ee69a9; 
+  border-color: #ee69a9;
 }
 
 .input-field input::placeholder {
@@ -84,10 +84,10 @@ h2 {
 
 .modal-buttons-container {
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   align-items: center;
-  gap: 10px; 
-  margin-bottom: 10px; 
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .modal-close-btn {
@@ -104,7 +104,7 @@ h2 {
 }
 
 .modal-close-btn:hover {
-  transform: scale(1.2); /
+  transform: scale(1.2);
 }
 
 .submit-button {
@@ -119,7 +119,7 @@ h2 {
 }
 
 .submit-button:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 .submit-icon {
