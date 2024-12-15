@@ -2,50 +2,54 @@ import React, { useEffect, useState } from "react";
 import "./styles/App.css";
 import AnimatedBox from "./components/AnimatedBox/AnimatedBox";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
+import Header from "./components/Header/Header"; // Импортируем Header
+import Footer from "./components/Footer/Footer"; // Импортируем Footer
 import { getTelegramInitData } from "./utils/telegramInitData";
 import { sendInitDataToBackend } from "./utils/authorize";
 
 function App() {
-  const [backendResponse, setBackendResponse] = useState(null); // Ответ от бэкенда
-  const [loading, setLoading] = useState(true); // Состояние загрузки
+  const [backendResponse, setBackendResponse] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchAndSendInitData() {
       const data = await getTelegramInitData();
       if (data) {
         try {
-          const response = await sendInitDataToBackend(data); // Отправляем данные на бэкенд
-          setBackendResponse(response); // Устанавливаем ответ от бэкенда
+          const response = await sendInitDataToBackend(data);
+          setBackendResponse(response);
         } catch (error) {
-          console.error(
-            "Ошибка при отправке данных на бэкенд: ",
-            data, // Используем актуальные данные
-            error
-          );
-          setBackendResponse(null); // Если ошибка, сбрасываем ответ
+          console.error("Ошибка при отправке данных на бэкенд:", error);
+          setBackendResponse(null);
         } finally {
-          setLoading(false); // Окончание загрузки
+          setLoading(false);
         }
       } else {
-        setLoading(false); // Окончание загрузки, если initData нет
+        setLoading(false);
       }
     }
 
     fetchAndSendInitData();
-  }, []); // Пустой массив зависимостей, чтобы эффект выполнялся только один раз при монтировании компонента
+  }, []);
 
-  // Показываем "это ТВОЁ время", пока initData или ответ от бэкенда не готовы
   if (loading || !backendResponse) {
     return (
       <div className="app-container">
+        <Header />
         <h1 className="app-title">это ТВОЁ время</h1>
         <AnimatedBox />
+        <Footer />
       </div>
     );
   }
 
-  // Показываем "Добро пожаловать!" при успешном получении ответа от бэкенда
-  return <WelcomePage backendResponse={backendResponse} />;
+  return (
+    <div className="app-container">
+      <Header />
+      <WelcomePage backendResponse={backendResponse} />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

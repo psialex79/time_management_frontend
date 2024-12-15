@@ -1,0 +1,18 @@
+.footer {
+  height: 60px;
+  width: 100%;
+  background-color: #ffffff; /* Светло-серый цвет */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ee69a9;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.footer-text {
+  color: #000000;
+  font-size: 0.9rem;
+  text-align: center;
+}
