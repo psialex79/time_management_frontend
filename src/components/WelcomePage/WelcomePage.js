@@ -24,6 +24,9 @@ function WelcomePage({ backendResponse }) {
   // Проверка на наличие записей
   const hasNoRecords = !postAuthResponse || postAuthResponse.length === 0;
 
+  console.log("postAuthResponse:", postAuthResponse);
+  console.log("hasNoRecords:", hasNoRecords);
+
   return (
     <div className="welcome-container">
       {isLoading ? <StatusMessage message="Загрузка..." /> : null}
