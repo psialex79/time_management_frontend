@@ -42,6 +42,12 @@ function Modal({ isOpen, onClose }) {
   return (
     <div className="modal-overlay">
       <div className="modal-container">
+        <form onSubmit={handleSubmit}>
+          <DateInput value={date} onChange={(e) => setDate(e.target.value)} />
+          <TimeInput value={time} onChange={(e) => setTime(e.target.value)} />
+          <NameInput value={name} onChange={(e) => setName(e.target.value)} />
+        </form>
+
         {/* Контейнер для кнопок */}
         <div className="modal-buttons-container">
           <button className="modal-close-btn" onClick={onClose}>
@@ -49,11 +55,6 @@ function Modal({ isOpen, onClose }) {
           </button>
           <SubmitButton onClick={handleSubmit} />
         </div>
-        <form onSubmit={handleSubmit}>
-          <DateInput value={date} onChange={(e) => setDate(e.target.value)} />
-          <TimeInput value={time} onChange={(e) => setTime(e.target.value)} />
-          <NameInput value={name} onChange={(e) => setName(e.target.value)} />
-        </form>
       </div>
     </div>
   );
