@@ -21,14 +21,15 @@
 }
 
 .records-list li {
-  padding: 8px;
-  background-color: #f5f5f5;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  padding: 0; /* Убираем внутренние отступы */
+  background-color: transparent; /* Убираем фон */
+  margin-bottom: 0; /* Убираем отступ между элементами */
+  border-radius: 0; /* Убираем скругление */
+  border: none; /* Убираем границы, если они появятся */
 }
 
 .records-list li strong {
-  color: #2d87f0;
+  color: #c4f85c;
 }
 
 .icon-button {

@@ -22,4 +22,6 @@ body {
   height: 703px;
   overflow: hidden;
   margin-top: 60px;
+  background: black;
+  color: white;
 }
