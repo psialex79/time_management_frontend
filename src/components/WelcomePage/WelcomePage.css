@@ -21,15 +21,15 @@
 }
 
 .records-list li {
-  padding: 0; /* Убираем внутренние отступы */
-  background-color: transparent; /* Убираем фон */
-  margin-bottom: 0; /* Убираем отступ между элементами */
-  border-radius: 0; /* Убираем скругление */
-  border: none; /* Убираем границы, если они появятся */
+  padding: 0;
+  background-color: transparent;
+  margin-bottom: 0;
+  border-radius: 0;
+  border: none;
 }
 
 .records-list li strong {
-  color: #c4f85c;
+  color: #ee69a9;
 }
 
 .icon-button {
@@ -51,4 +51,32 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* Стили для времени */
+.time {
+  color: #ee69a9;
+  font-weight: bold;
+}
+
+.time .hours,
+.time .minutes {
+  color: inherit; /* Наследуем розовый цвет */
+}
+
+.time .colon {
+  color: inherit;
+  animation: blink 1s infinite;
+}
+
+/* Анимация мигания */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }

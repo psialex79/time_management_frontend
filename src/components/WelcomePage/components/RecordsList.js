@@ -1,11 +1,7 @@
-import React from "react";
-
 function RecordsList({ records }) {
-  // Функция для форматирования текущей даты
   const getFormattedDate = () => {
     const now = new Date();
 
-    // Список дней недели и месяцев
     const weekdays = [
       "Воскресенье",
       "Понедельник",
@@ -30,26 +26,34 @@ function RecordsList({ records }) {
       "Декабря",
     ];
 
-    // Получаем текущие значения
-    const dayOfWeek = weekdays[now.getDay()]; // День недели
-    const day = now.getDate(); // Число месяца
-    const month = months[now.getMonth()]; // Месяц
-    const hours = now.getHours(); // Часы
-    const minutes = now.getMinutes(); // Минуты
+    const dayOfWeek = weekdays[now.getDay()];
+    const day = now.getDate();
+    const month = months[now.getMonth()];
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
 
-    // Форматируем время, добавляя ведущий ноль, если минуты меньше 10
-    const formattedTime = `${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
-
-    // Форматируем дату
-    return `${dayOfWeek}, ${day} ${month} ${formattedTime}`;
+    return {
+      date: `${dayOfWeek}, ${day} ${month}`,
+      hours,
+      minutes: minutes < 10 ? `0${minutes}` : minutes,
+    };
   };
+
+  const { date, hours, minutes } = getFormattedDate();
 
   return (
     <div className="records-list">
-      {/* Показываем текущий день недели, время и дату */}
-      <h3>{getFormattedDate()}</h3>
+      {/* Текущая дата и время */}
+      <h3>
+        {date}{" "}
+        <span className="time">
+          <span className="hours">{hours}</span>
+          <span className="colon">:</span>
+          <span className="minutes">{minutes}</span>
+        </span>
+      </h3>
 
-      {/* Отображаем записи */}
+      {/* Список записей */}
       <ul>
         {records.map((record, index) => (
           <li key={index}>
