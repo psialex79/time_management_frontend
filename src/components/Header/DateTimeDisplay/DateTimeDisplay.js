@@ -43,7 +43,7 @@ function DateTimeDisplay() {
   return (
     <div className="date-time-display">
       <span className="date">
-        {dayOfWeek}, {day} {month}
+        {dayOfWeek}, {day} {month},
       </span>
       <span className="time">
         <span className="hours">{hours}</span>
