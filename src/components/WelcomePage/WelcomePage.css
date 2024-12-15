@@ -37,11 +37,14 @@
 
 /* Стили для кнопки добавления */
 .icon-button {
+  animation: pulse 1.5s infinite;
   cursor: pointer;
   height: 32px;
-  width: 32px;
   position: relative;
-  animation: pulse 1.5s infinite; /* Добавляем анимацию пульсации */
+  width: 32px;
+  border-radius: 50px;
+  padding: 9px;
+  margin-top: 20px;
 }
 
 .icon-button img {
