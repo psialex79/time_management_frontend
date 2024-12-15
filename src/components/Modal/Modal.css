@@ -20,14 +20,14 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #ee69a9;
+  color: var(--accent-text-color); /* Цвет кнопки закрытия */
 }
 
 h2 {
   text-align: center;
   font-size: 22px;
   margin-bottom: 20px;
-  color: white;
+  color: var(--text-color); /* Цвет текста заголовка */
 }
 
 /* Поля ввода */
@@ -40,15 +40,15 @@ h2 {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
-  color: white;
+  color: var(--text-color); /* Цвет текста метки */
 }
 
 .input-field input {
   background-color: #000;
-  border: 1px solid #fff;
+  border: 1px solid var(--text-color); /* Цвет границы */
   border-radius: 6px;
   box-shadow: none;
-  color: #fff;
+  color: var(--text-color); /* Цвет текста */
   font-size: 14px;
   min-width: 220px;
   outline: none;
@@ -58,18 +58,20 @@ h2 {
 
 /* Состояние фокуса */
 .input-field input:focus {
-  border-color: #ee69a9; /* Цвет рамки при фокусе */
+  border-color: var(--accent-text-color); /* Цвет рамки при фокусе */
 }
 
 /* Убираем стили автозаполнения в Chrome */
 .input-field input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px black inset !important; /* Сохраняем черный фон */
-  -webkit-text-fill-color: white !important; /* Цвет текста при автозаполнении */
+  -webkit-text-fill-color: var(
+    --text-color
+  ) !important; /* Цвет текста при автозаполнении */
 }
 
 .input-field input:focus {
   outline: none;
-  border-color: #ee69a9;
+  border-color: var(--accent-text-color); /* Цвет рамки при фокусе */
 }
 
 .input-field input::placeholder {
@@ -87,7 +89,7 @@ h2 {
   align-items: center;
   background: #0000;
   border: none;
-  color: #ee69a9;
+  color: var(--accent-text-color); /* Цвет кнопки закрытия */
   cursor: pointer;
   display: flex;
   font-size: 25px;
@@ -123,7 +125,7 @@ h2 {
 }
 
 .error-message {
-  color: #ee69a9;
+  color: var(--accent-text-color); /* Цвет сообщения об ошибке */
   font-size: 1rem;
   margin-top: 10px;
 }
