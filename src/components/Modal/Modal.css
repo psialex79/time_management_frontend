@@ -12,7 +12,7 @@
 }
 
 .modal-container {
-  background: #fff;
+  background: black;
   padding: 20px;
   border-radius: 12px;
   width: 100%;
@@ -29,14 +29,14 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #555;
+  color: #ee69a9;
 }
 
 h2 {
   text-align: center;
   font-size: 22px;
   margin-bottom: 20px;
-  color: #333;
+  color: white;
 }
 
 /* Поля ввода */
@@ -48,35 +48,35 @@ h2 {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
-  color: #666;
+  color: white;
 }
 
 .input-field input {
   width: 100%;
   padding: 12px;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid white;
   font-size: 14px;
-  color: #333;
-  background-color: #f9f9f9;
+  color: white;
+  background-color: black;
   transition: border 0.3s ease-in-out;
 }
 
 .input-field input:focus {
   outline: none;
-  border-color: #4caf50; /* Цвет при фокусе */
+  border-color: #ee69a9; /* Цвет при фокусе */
 }
 
 .input-field input::placeholder {
-  color: #888;
+  color: rgba(255, 255, 255, 0.925);
 }
 
 /* Кнопка отправки */
 .submit-btn {
   width: 100%;
   padding: 12px;
-  background: #4caf50;
-  color: white;
+  background: #ee69a9;
+  color: black;
   border: none;
   border-radius: 6px;
   font-size: 16px;
@@ -85,9 +85,9 @@ h2 {
 }
 
 .submit-btn:hover {
-  background: #45a049;
+  background: #cc5a91;
 }
 
 .submit-btn:active {
-  background: #388e3c;
+  background: #aa4c79;
 }
