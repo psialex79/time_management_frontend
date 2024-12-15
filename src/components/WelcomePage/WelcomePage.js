@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./WelcomePage.css";
 import StatusMessage from "./components/StatusMessage";
 import RecordsList from "./components/RecordsList";
-import IconButton from "./components/IconButton"; // Импортируем компонент иконки
-import Modal from "../Modal/Modal"; // Импортируем модальное окно
+import Footer from "../Footer/Footer";
+import Modal from "../Modal/Modal";
 
 function WelcomePage({ backendResponse }) {
   const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для модального окна
@@ -27,9 +27,6 @@ function WelcomePage({ backendResponse }) {
     (Array.isArray(postAuthResponse) && postAuthResponse.length === 0) ||
     (postAuthResponse.message && typeof postAuthResponse.message === "string");
 
-  console.log("postAuthResponse:", postAuthResponse);
-  console.log("hasNoRecords:", hasNoRecords);
-
   return (
     <div className="welcome-container">
       {isLoading ? <StatusMessage message="Загрузка..." /> : null}
@@ -39,11 +36,8 @@ function WelcomePage({ backendResponse }) {
         <RecordsList records={postAuthResponse} />
       ) : null}
 
-      {/* Отображаем иконку в правом нижнем углу */}
-      <IconButton
-        onClick={openModal}
-        extraClass={hasNoRecords ? "glowing-button" : ""}
-      />
+      {/* Компонент Footer с кнопкой */}
+      <Footer openModal={openModal} hasNoRecords={hasNoRecords} />
 
       {/* Модальное окно */}
       <Modal isOpen={isModalOpen} onClose={closeModal} />
