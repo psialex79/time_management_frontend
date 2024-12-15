@@ -1,12 +1,3 @@
-import React, { useState } from "react";
-import DateInput from "./components/DateInput";
-import TimeInput from "./components/TimeInput";
-import NameInput from "./components/NameInput";
-import SubmitButton from "./components/SubmitButton";
-import { sendFormData } from "../../utils/newMeeting";
-import { getTelegramInitData } from "../../utils/telegramInitData";
-import "./Modal.css";
-
 function Modal({ isOpen, onClose }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -17,14 +8,15 @@ function Modal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Проверка на обязательные поля
     if (!date || !time || !name) {
       setError("Пожалуйста, заполните все поля.");
       return;
     }
 
-    setError(""); // Сбрасываем ошибку, если все поля заполнены
-    setIsSubmitting(true); // Делаем кнопку неактивной, когда данные отправляются
+    setError(""); // Сброс ошибки
+    setIsSubmitting(true); // Блокируем кнопку
+
+    onClose(); // Закрываем модальное окно сразу
 
     const formData = { date, time, name };
 
@@ -34,18 +26,12 @@ function Modal({ isOpen, onClose }) {
         formData.initData = initData;
       }
 
-      const response = await sendFormData(formData);
-
-      if (response) {
-        console.log("Данные успешно отправлены:", response);
-      } else {
-        console.error("Ошибка при отправке данных.");
-      }
+      await sendFormData(formData);
+      window.location.reload(); // Перезагружаем страницу для обновления данных
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
     } finally {
-      setIsSubmitting(false); // Разблокируем кнопку после отправки данных
-      onClose();
+      setIsSubmitting(false); // Разблокируем кнопку (если потребуется)
     }
   };
 
@@ -60,7 +46,6 @@ function Modal({ isOpen, onClose }) {
           <NameInput value={name} onChange={(e) => setName(e.target.value)} />
         </form>
 
-        {/* Отображение ошибки, если форма не заполнена */}
         {error && <div className="error-message">{error}</div>}
 
         <div className="modal-buttons-container">
@@ -69,7 +54,7 @@ function Modal({ isOpen, onClose }) {
           </button>
           <SubmitButton
             onClick={handleSubmit}
-            disabled={isSubmitting} // Блокируем кнопку при отправке
+            disabled={isSubmitting} // Передаём состояние блокировки
           />
         </div>
       </div>
