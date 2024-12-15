@@ -15,20 +15,17 @@ function Modal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = { date, time, name }; // Собираем данные формы
+    const formData = { date, time, name };
 
     try {
-      // Получаем initData из Telegram WebApp
       const initData = await getTelegramInitData();
       if (initData) {
-        // Добавляем initData к formData
         formData.initData = initData;
       }
     } catch (error) {
       console.error("Ошибка при получении initData:", error);
     }
 
-    // Отправляем данные на сервер
     const response = await sendFormData(formData);
 
     if (response) {
@@ -37,22 +34,25 @@ function Modal({ isOpen, onClose }) {
       console.error("Ошибка при отправке данных.");
     }
 
-    onClose(); // Закрываем модальное окно после отправки
+    onClose();
   };
 
-  if (!isOpen) return null; // Если модальное окно не открыто, ничего не рендерим
+  if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <button className="modal-close-btn" onClick={onClose}>
-          X
-        </button>
+        {/* Контейнер для кнопок */}
+        <div className="modal-buttons-container">
+          <button className="modal-close-btn" onClick={onClose}>
+            х
+          </button>
+          <SubmitButton onClick={handleSubmit} />
+        </div>
         <form onSubmit={handleSubmit}>
           <DateInput value={date} onChange={(e) => setDate(e.target.value)} />
           <TimeInput value={time} onChange={(e) => setTime(e.target.value)} />
           <NameInput value={name} onChange={(e) => setName(e.target.value)} />
-          <SubmitButton onClick={handleSubmit} />
         </form>
       </div>
     </div>

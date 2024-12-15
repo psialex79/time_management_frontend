@@ -75,11 +75,36 @@ h2 {
 
 .input-field input:focus {
   outline: none;
-  border-color: #ee69a9; /* Цвет при фокусе */
+  border-color: #ee69a9; 
 }
 
 .input-field input::placeholder {
   color: rgba(255, 255, 255, 0.925);
+}
+
+.modal-buttons-container {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 10px; 
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ee69a9;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.2); /
 }
 
 .submit-button {
@@ -90,16 +115,16 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.2); 
 }
 
 .submit-icon {
-  width: 25px; /* Размер иконки */
+  width: 25px;
   height: 25px;
   filter: invert(22%) sepia(69%) saturate(4103%) hue-rotate(318deg)
     brightness(91%) contrast(99%);
-  transition: transform 0.3s ease;
-}
-
-.submit-button:hover .submit-icon {
-  transform: scale(1.1); /* Увеличение при наведении */
 }
