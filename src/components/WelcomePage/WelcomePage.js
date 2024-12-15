@@ -22,7 +22,9 @@ function WelcomePage({ backendResponse }) {
   }, [backendResponse]);
 
   // Проверка на наличие записей
-  const hasNoRecords = !postAuthResponse || postAuthResponse.length === 0;
+  const hasNoRecords =
+    !postAuthResponse ||
+    (Array.isArray(postAuthResponse) && postAuthResponse.length === 0);
 
   console.log("postAuthResponse:", postAuthResponse);
   console.log("hasNoRecords:", hasNoRecords);
