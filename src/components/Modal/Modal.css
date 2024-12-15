@@ -33,6 +33,7 @@ h2 {
 /* Поля ввода */
 .input-field {
   margin-bottom: 20px;
+  height: 50px;
 }
 
 .input-field label {
