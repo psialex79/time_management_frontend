@@ -20,11 +20,13 @@ function WelcomePage({ backendResponse }) {
     return today.toISOString().split("T")[0];
   };
 
-  // Фильтрация записей с сегодняшней датой
-  const todayRecords =
-    postAuthResponse?.filter(
-      (record) => record.record_date === getTodayDate()
-    ) || [];
+  // Проверяем, является ли postAuthResponse массивом
+  const isResponseArray = Array.isArray(postAuthResponse);
+
+  // Фильтрация записей с сегодняшней датой, если response - массив
+  const todayRecords = isResponseArray
+    ? postAuthResponse.filter((record) => record.record_date === getTodayDate())
+    : [];
 
   return (
     <div className="welcome-container">
@@ -34,7 +36,14 @@ function WelcomePage({ backendResponse }) {
       {todayRecords.length > 0 ? (
         <RecordsList records={todayRecords} />
       ) : (
-        !isLoading && <StatusMessage message="Сегодня записей нет" />
+        !isLoading &&
+        (isResponseArray ? (
+          <StatusMessage message="Сегодня записей нет" />
+        ) : (
+          <StatusMessage
+            message={postAuthResponse.message || "Ошибка данных"}
+          />
+        ))
       )}
     </div>
   );
