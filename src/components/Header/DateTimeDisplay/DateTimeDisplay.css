@@ -1,32 +1,34 @@
 .date-time-display {
   align-items: center;
   display: flex;
-  color: var(--text-color); /* Основной цвет текста */
+  color: var(--text-color);
+  font-size: 1.2rem;
 }
 
 .date {
   font-weight: 400;
-  color: var(--subtitle-text-color); /* Цвет для даты */
+  color: var(--subtitle-text-color);
+  font-size: 0.9rem;
 }
 
 .time {
   align-items: center;
   display: flex;
   font-weight: 700;
-  padding: 5px;
-  color: var(--text-color); /* Цвет для времени */
+  padding: 3px;
+  color: var(--text-color);
 }
 
 .hours,
 .minutes {
-  font-size: 1.2rem;
-  color: var(--text-color); /* Цвет для текста часов и минут */
+  font-size: 1.5rem;
+  color: var(--text-color);
 }
 
 .colon {
-  margin: 0 2px;
+  margin: 0 1px;
   animation: blink 1s infinite;
-  color: var(--accent-text-color); /* Цвет двоеточия */
+  color: var(--accent-text-color);
 }
 
 @keyframes blink {

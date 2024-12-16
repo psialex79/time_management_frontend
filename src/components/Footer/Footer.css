@@ -1,18 +1,19 @@
 .footer {
-  height: 60px;
-  width: 300px;
+  height: 50px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid var(--accent-text-color); /* цвет для границы */
-  background-color: var(--bg-color); /* Фон футера */
+  border-top: 2px solid var(--accent-text-color);
+  background-color: var(--bg-color);
   position: fixed;
-  bottom: 50px;
+  bottom: 10px;
   z-index: 1000;
 }
 
 .footer-text {
-  color: var(--text-color); /* Основной цвет текста */
-  font-size: 0.9rem;
+  color: var(--text-color);
+  font-size: 0.8rem;
   text-align: center;
+  padding: 0 10px;
 }

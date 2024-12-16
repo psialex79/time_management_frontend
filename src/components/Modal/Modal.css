@@ -4,12 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); /* Прозрачность не заменяется, переменная не подходит */
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,85 +12,25 @@
 }
 
 .modal-container {
-  background-color: var(--bg-color); /* Цвет фона модального окна */
-  padding: 20px;
+  background-color: var(--bg-color);
+  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
+  width: 90%;
+  max-width: 350px;
 }
 
 .modal-close-btn {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--accent-text-color); /* Цвет кнопки закрытия */
-}
-
-h2 {
-  text-align: center;
+  color: var(--accent-text-color);
   font-size: 22px;
-  margin-bottom: 20px;
-  color: var(--text-color); /* Цвет текста заголовка */
-}
-
-/* Поля ввода */
-.input-field {
-  margin-bottom: 20px;
-}
-
-.input-field label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: var(--text-color); /* Цвет текста метки */
-}
-
-.input-field input {
-  background-color: var(--secondary-bg-color); /* Цвет фона поля */
-  border: 1px solid var(--section-separator-color); /* Цвет границы */
-  border-radius: 6px;
-  box-shadow: none;
-  color: var(--text-color); /* Цвет текста */
-  font-size: 14px;
-  min-width: 220px;
-  outline: none;
-  padding: 14px;
-  transition: border 0.3s ease-in-out;
-}
-
-/* Состояние фокуса */
-.input-field input:focus {
-  border-color: var(--accent-text-color); /* Цвет рамки при фокусе */
-}
-
-/* Убираем стили автозаполнения в Chrome */
-.input-field input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px var(--secondary-bg-color) inset !important; /* Сохраняем фон поля */
-  -webkit-text-fill-color: var(
-    --text-color
-  ) !important; /* Цвет текста при автозаполнении */
-}
-
-.input-field input::placeholder {
-  color: var(--hint-color); /* Цвет текста подсказки */
-}
-
-.modal-buttons-container {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-.modal-close-btn {
-  background: transparent;
-  border: none;
-  color: var(--accent-text-color); /* Цвет кнопки закрытия */
-  cursor: pointer;
-  display: flex;
-  font-size: 25px;
-  justify-content: center;
-  padding: 10px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 5px;
   transition: transform 0.2s ease;
 }
 
@@ -103,16 +38,65 @@ h2 {
   transform: scale(1.2);
 }
 
-.submit-button {
-  align-items: center;
-  background-color: var(--button-color); /* Цвет кнопки отправки */
-  border: none;
-  color: var(--button-text-color); /* Цвет текста кнопки */
-  cursor: pointer;
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.input-field {
+  margin-bottom: 16px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.input-field input {
+  background-color: var(--secondary-bg-color);
+  border: 1px solid var(--section-separator-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 14px;
+  min-width: 100%;
+  outline: none;
+  padding: 12px;
+  transition: border 0.3s ease-in-out;
+}
+
+.input-field input:focus {
+  border-color: var(--accent-text-color);
+}
+
+.input-field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--secondary-bg-color) inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+}
+
+.input-field input::placeholder {
+  color: var(--hint-color);
+}
+
+.modal-buttons-container {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  margin-top: 16px;
+}
+
+.submit-button {
+  background-color: var(--button-color);
+  border: none;
+  color: var(--button-text-color);
+  cursor: pointer;
+  padding: 12px;
   border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -121,13 +105,14 @@ h2 {
 }
 
 .submit-icon {
-  width: 25px;
-  height: 25px;
-  fill: var(--button-text-color); /* Цвет иконки отправки */
+  width: 22px;
+  height: 22px;
+  fill: var(--button-text-color);
 }
 
 .error-message {
-  color: var(--destructive-text-color); /* Цвет сообщения об ошибке */
-  font-size: 1rem;
-  margin-top: 10px;
+  color: var(--destructive-text-color);
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
 }

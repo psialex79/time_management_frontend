@@ -3,22 +3,22 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 300px;
+  width: 100%;
+  padding: 0 20px;
   text-align: center;
-  background-color: var(--bg-color); /* Цвет фона основного контейнера */
+  background-color: var(--bg-color);
 }
 
 .status-message {
-  font-size: 1.2rem;
-  margin: 20px 0;
-  color: var(--text-color); /* Цвет текста сообщения */
+  font-size: 1rem;
+  margin: 15px 0;
+  color: var(--text-color);
 }
 
 .records-list {
   display: inline-block;
   font-family: Arial, sans-serif;
-  margin: 0 auto;
-  width: 300px;
+  width: 100%;
 }
 
 .records-list ul {
@@ -29,11 +29,11 @@
 
 .record-item {
   position: relative;
-  padding: 15px 20px;
-  margin-bottom: 10px;
+  padding: 12px 15px;
+  margin-bottom: 8px;
   border-radius: 8px;
-  background-color: var(--bg-color); /* Цвет фона элемента записи */
-  border: 1px solid var(--section-separator-color); /* Цвет границы */
+  background-color: var(--bg-color);
+  border: 1px solid var(--section-separator-color);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
@@ -46,24 +46,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
-  color: var(--text-color); /* Цвет текста заголовка записи */
+  font-size: 12px;
+  color: var(--text-color);
 }
 
 .record-time-label {
-  font-size: 12px;
+  font-size: 10px;
   padding: 4px 8px;
   border-radius: 12px;
-  background-color: var(--button-color); /* Цвет фона метки времени */
+  background-color: var(--button-color);
   font-weight: bold;
-  color: var(--button-text-color); /* Цвет текста метки времени */
+  color: var(--button-text-color);
 }
 
 .record-comment {
   display: none;
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 12px;
-  color: var(--hint-color); /* Цвет текста комментария */
+  color: var(--hint-color);
   animation: fadeIn 0.3s ease;
 }
 
@@ -82,56 +82,51 @@
   }
 }
 
-/* Стили для кнопки добавления */
 .icon-button {
   animation: pulse 1.5s infinite;
   cursor: pointer;
-  height: 40px; /* Размер кнопки */
-  width: 40px; /* Размер кнопки */
+  height: 40px;
+  width: 40px;
   display: flex;
-  align-items: center; /* Центрируем по вертикали */
-  justify-content: center; /* Центрируем по горизонтали */
-  border-radius: 50%; /* Полностью круглая кнопка */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  margin-top: 15px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Состояние кнопки при нажатии */
 .icon-button:active {
   transform: scale(0.95);
 }
 
-/* Стили для символа "+" */
 .plus-icon {
-  font-size: 24px; /* Размер символа */
-  color: var(--button-color); /* Цвет текста из переменной */
-  position: relative; /* Чтобы использовать top для сдвига */
-  top: -2px; /* Смещение символа "+" немного вверх */
+  font-size: 24px;
+  color: var(--button-color);
+  position: relative;
+  top: -2px;
 }
 
-/* Анимация пульсации */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(22, 138, 205, 0.8); /* Используем var(--link-color) с альфа-каналом */
+    box-shadow: 0 0 0 0 rgba(22, 138, 205, 0.8);
   }
   50% {
-    box-shadow: 0 0 10px 10px rgba(22, 138, 205, 0); /* Свет затухает */
+    box-shadow: 0 0 10px 10px rgba(22, 138, 205, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(22, 138, 205, 0.8); /* Восстановление */
+    box-shadow: 0 0 0 0 rgba(22, 138, 205, 0.8);
   }
 }
 
-/* Стили для времени */
 .time {
-  color: var(--accent-text-color); /* Цвет времени */
+  color: var(--accent-text-color);
   font-weight: bold;
 }
 
 .time .hours,
 .time .minutes {
-  color: inherit; /* Наследуем цвет акцента */
+  color: inherit;
 }
 
 .time .colon {
@@ -139,7 +134,6 @@
   animation: blink 1s infinite;
 }
 
-/* Анимация мигания */
 @keyframes blink {
   0%,
   50% {

@@ -7,11 +7,13 @@
   text-align: center;
   background-color: var(--bg-color);
   height: 100vh;
+  padding: 20px;
 }
 
 .app-title {
-  position: relative;
-  font-size: 24px;
+  font-size: 18px;
   color: var(--text-color);
   z-index: 2;
+  padding: 10px;
+  word-wrap: break-word;
 }

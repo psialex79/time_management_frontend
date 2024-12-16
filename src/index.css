@@ -28,10 +28,18 @@ body {
   align-items: center;
   background-color: var(--bg-color);
   color: var(--text-color);
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 #root {
   background: var(--bg-color);
   color: var(--text-color);
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
