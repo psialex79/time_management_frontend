@@ -11,35 +11,47 @@
   margin: 20px 0;
 }
 
-/* Стили для списка записей */
+:root {
+  --record-item-bg: var(--bg-color);
+  --record-item-border: var(--section-separator-color);
+  --record-item-hover-bg: var(--secondary-bg-color);
+  --record-header-color: var(--text-color);
+  --record-comment-color: var(--hint-color);
+  --time-label-bg: var(--button-color);
+  --time-label-color: var(--button-text-color);
+}
+
 .records-list {
   display: inline-block;
   text-align: left;
   margin: 0 auto;
   max-width: 400px;
   font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .records-list ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .record-item {
   position: relative;
-  padding: 10px 15px;
+  padding: 15px 20px;
   margin-bottom: 10px;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.3s ease;
+  background-color: var(--record-item-bg);
+  border: 1px solid var(--record-item-border);
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.record-item:hover {
-  transform: translateY(-5px);
-  background-color: #f1f1f1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.record-item:active {
+  transform: scale(0.98);
 }
 
 .record-header {
@@ -47,28 +59,39 @@
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  color: #333;
+  color: var(--record-header-color);
 }
 
 .record-time-label {
   font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background-color: #ffed85;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: var(--time-label-bg);
   font-weight: bold;
-  color: #555;
+  color: var(--time-label-color);
 }
 
 .record-comment {
   display: none;
   margin-top: 10px;
   font-size: 12px;
-  color: #666;
+  color: var(--record-comment-color);
   animation: fadeIn 0.3s ease;
 }
 
-.record-item:hover .record-comment {
+.record-item.open .record-comment {
   display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
