@@ -18,6 +18,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   width: 90%;
+  margin: 0px 10px;
   max-width: 350px;
 }
 
@@ -62,7 +63,7 @@ h2 {
   border-radius: 6px;
   color: var(--text-color);
   font-size: 14px;
-  min-width: 100%;
+  width: 90%;
   outline: none;
   padding: 12px;
   transition: border 0.3s ease-in-out;
