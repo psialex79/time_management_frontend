@@ -18,7 +18,7 @@
 .records-list {
   display: inline-block;
   font-family: Arial, sans-serif;
-  width: 100%;
+  width: 300px;
 }
 
 .records-list ul {
