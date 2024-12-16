@@ -15,14 +15,9 @@
 
 .records-list {
   display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  max-width: 400px;
   font-family: Arial, sans-serif;
-  background-color: var(--secondary-bg-color); /* Цвет фона списка записей */
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 300px;
 }
 
 .records-list ul {

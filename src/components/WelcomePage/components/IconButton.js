@@ -1,13 +1,12 @@
 import React from "react";
-import IconButton from "../WelcomePage/components/IconButton"; // Импорт нового компонента
-import "./Footer.css"; // Стили для футера (не кнопки)
+import "../WelcomePage.css";
 
-function Footer({ openModal }) {
+function IconButton({ onClick }) {
   return (
-    <footer className="footer">
-      <IconButton onClick={openModal} />
-    </footer>
+    <div className="icon-button" onClick={onClick}>
+      <span className="plus-icon">+</span>
+    </div>
   );
 }
 
-export default Footer;
+export default IconButton;

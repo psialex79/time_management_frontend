@@ -1,14 +1,6 @@
 import React from "react";
-import icon from "../../icons/plus_man_pink.png";
-import "./Footer.css";
-
-function IconButton({ onClick, extraClass }) {
-  return (
-    <div className={`icon-button ${extraClass}`} onClick={onClick}>
-      <img src={icon} alt="Добавить запись" />
-    </div>
-  );
-}
+import IconButton from "../WelcomePage/components/IconButton"; // Импорт нового компонента
+import "./Footer.css"; // Стили для футера (не кнопки)
 
 function Footer({ openModal }) {
   return (

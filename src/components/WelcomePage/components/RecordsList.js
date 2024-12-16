@@ -18,7 +18,6 @@ function RecordsList({ records }) {
           >
             <div className="record-header">
               <span className="record-time-label">{record.record_time}</span>
-              <span>{record.record_date}</span>
               <span>{record.client_name}</span>
             </div>
             {record.comment && (
