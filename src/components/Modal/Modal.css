@@ -13,12 +13,10 @@
 
 .modal-container {
   background-color: var(--bg-color);
-  padding: 16px;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
-  width: 90%;
-  max-width: 350px;
 }
 
 .modal-close-btn {
@@ -26,32 +24,22 @@
   border: none;
   cursor: pointer;
   color: var(--accent-text-color);
-  font-size: 22px;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 5px;
-  transition: transform 0.2s ease;
-}
-
-.modal-close-btn:hover {
-  transform: scale(1.2);
 }
 
 h2 {
   text-align: center;
-  font-size: 20px;
-  margin-bottom: 16px;
+  font-size: 22px;
+  margin-bottom: 20px;
   color: var(--text-color);
 }
 
 .input-field {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .input-field label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   font-size: 14px;
   color: var(--text-color);
 }
@@ -60,11 +48,12 @@ h2 {
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--section-separator-color);
   border-radius: 6px;
+  box-shadow: none;
   color: var(--text-color);
   font-size: 14px;
-  min-width: 100%;
+  min-width: 220px;
   outline: none;
-  padding: 12px;
+  padding: 14px;
   transition: border 0.3s ease-in-out;
 }
 
@@ -82,21 +71,38 @@ h2 {
 }
 
 .modal-buttons-container {
+  align-items: center;
   display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-text-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 25px;
   justify-content: center;
-  margin-top: 16px;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.2);
 }
 
 .submit-button {
+  align-items: center;
   background-color: var(--button-color);
   border: none;
   color: var(--button-text-color);
   cursor: pointer;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 16px;
   display: flex;
   justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -105,14 +111,13 @@ h2 {
 }
 
 .submit-icon {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   fill: var(--button-text-color);
 }
 
 .error-message {
   color: var(--destructive-text-color);
-  font-size: 14px;
-  margin-top: 8px;
-  text-align: center;
+  font-size: 1rem;
+  margin-top: 10px;
 }
