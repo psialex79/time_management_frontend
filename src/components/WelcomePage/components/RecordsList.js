@@ -1,12 +1,17 @@
 function RecordsList({ records }) {
   return (
     <div className="records-list">
-      {/* Список записей */}
       <ul>
         {records.map((record, index) => (
-          <li key={index}>
-            {record.record_date} - {record.record_time} - {record.client_name}
-            {record.comment && <div>{record.comment}</div>}
+          <li key={index} className="record-item">
+            <div className="record-header">
+              <span className="record-time-label">{record.record_time}</span>
+              <span>{record.record_date}</span>
+              <span>{record.client_name}</span>
+            </div>
+            {record.comment && (
+              <div className="record-comment">{record.comment}</div>
+            )}
           </li>
         ))}
       </ul>

@@ -11,11 +11,13 @@
   margin: 20px 0;
 }
 
+/* Стили для списка записей */
 .records-list {
   display: inline-block;
   text-align: left;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 400px;
+  font-family: Arial, sans-serif;
 }
 
 .records-list ul {
@@ -23,16 +25,59 @@
   padding: 0;
 }
 
-.records-list li {
-  padding-top: 10px;
-  background-color: transparent;
-  margin-bottom: 0;
-  border-radius: 0;
-  border: none;
+.record-item {
+  position: relative;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.records-list li strong {
-  color: #ee69a9;
+.record-item:hover {
+  transform: translateY(-5px);
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.record-time-label {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #ffed85;
+  font-weight: bold;
+  color: #555;
+}
+
+.record-comment {
+  display: none;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+  animation: fadeIn 0.3s ease;
+}
+
+.record-item:hover .record-comment {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Стили для кнопки добавления */
