@@ -1,13 +1,11 @@
 import React from "react";
+import "./EditModal.css";
 
 function Modal({ record, closeModal }) {
   return (
-    <div className="modal-overlay">
-      <div className="modal-container">
-        <button className="modal-close-btn" onClick={closeModal}>
-          X
-        </button>
-        <div className="modal-content">
+    <div className="editmodal-overlay">
+      <div className="editmodal-container">
+        <div className="editmodal-content">
           <h2>{record.client_name}</h2>
           <p>
             <strong>Время записи:</strong> {record.record_time}
@@ -21,6 +19,9 @@ function Modal({ record, closeModal }) {
             </p>
           )}
         </div>
+        <button className="editmodal-close-btn" onClick={closeModal}>
+          X
+        </button>
       </div>
     </div>
   );

@@ -1,0 +1,79 @@
+/* Стили для Overlay модального окна */
+.editmodal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+/* Стили для контейнера модального окна */
+.editmodal-container {
+  background-color: var(--bg-color); /* Цвет фона модального окна */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  max-width: 500px; /* Максимальная ширина */
+  width: 100%; /* Убираем фиксированную ширину */
+}
+
+/* Стили для содержимого модального окна */
+.editmodal-content {
+  color: var(--text-color); /* Цвет текста */
+  font-family: Arial, sans-serif; /* Шрифт */
+  line-height: 1.6;
+}
+
+/* Стили для заголовка модального окна */
+.editmodal-content h2 {
+  text-align: center;
+  color: var(--accent-text-color); /* Цвет заголовка */
+  margin-bottom: 20px;
+  font-size: 1.5rem; /* Размер шрифта */
+}
+
+/* Стили для текста внутри модального окна */
+.editmodal-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Стили для кнопки закрытия модального окна */
+.editmodal-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-text-color); /* Цвет кнопки */
+  cursor: pointer;
+  font-size: 1.5rem; /* Размер шрифта для кнопки */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.editmodal-close-btn:hover {
+  transform: scale(1.1); /* Эффект увеличения кнопки при наведении */
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .editmodal-container {
+    padding: 15px;
+    max-width: 90%; /* Ширина модального окна на мобильных устройствах */
+  }
+
+  .editmodal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .editmodal-content p {
+    font-size: 0.9rem;
+  }
+}
