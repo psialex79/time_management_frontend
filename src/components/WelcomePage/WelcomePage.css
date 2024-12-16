@@ -85,33 +85,26 @@
 .icon-button {
   animation: pulse 1.5s infinite;
   cursor: pointer;
-  height: 40px; /* Увеличенный размер для улучшения восприятия */
-  width: 40px;
+  height: 40px; /* Размер кнопки */
+  width: 40px; /* Размер кнопки */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Центрируем по вертикали */
+  justify-content: center; /* Центрируем по горизонтали */
   border-radius: 50%; /* Полностью круглая кнопка */
-  background-color: var(--button-color); /* Основной цвет кнопки */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.icon-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
+/* Состояние кнопки при нажатии */
 .icon-button:active {
   transform: scale(0.95);
 }
 
 /* Стили для символа "+" */
 .plus-icon {
-  font-size: 24px; /* Размер символа */
-  font-weight: bold; /* Жирный шрифт */
+  font-size: 24px; /* Размер символа +, подогнан под размер кнопки */
   color: var(--button-text-color); /* Цвет текста из переменной */
-  line-height: 1; /* Убираем лишние отступы */
 }
 
 /* Анимация пульсации */
