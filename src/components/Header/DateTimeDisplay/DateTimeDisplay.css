@@ -1,10 +1,12 @@
 .date-time-display {
   align-items: center;
   display: flex;
+  color: var(--text-color); /* Основной цвет текста */
 }
 
 .date {
   font-weight: 400;
+  color: var(--subtitle-text-color); /* Цвет для даты */
 }
 
 .time {
@@ -12,16 +14,19 @@
   display: flex;
   font-weight: 700;
   padding: 5px;
+  color: var(--text-color); /* Цвет для времени */
 }
 
 .hours,
 .minutes {
   font-size: 1.2rem;
+  color: var(--text-color); /* Цвет для текста часов и минут */
 }
 
 .colon {
   margin: 0 2px;
   animation: blink 1s infinite;
+  color: var(--accent-text-color); /* Цвет двоеточия */
 }
 
 @keyframes blink {

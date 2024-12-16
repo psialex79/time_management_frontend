@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  background-color: #ee69a9;
+  background-color: var(--accent-text-color);
   border-radius: 50%;
   z-index: 1;
   animation: bounce 1.5s infinite;

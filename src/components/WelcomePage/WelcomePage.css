@@ -4,21 +4,13 @@
   align-items: center;
   height: 100vh;
   text-align: center;
+  background-color: var(--bg-color); /* Цвет фона основного контейнера */
 }
 
 .status-message {
   font-size: 1.2rem;
   margin: 20px 0;
-}
-
-:root {
-  --record-item-bg: var(--bg-color);
-  --record-item-border: var(--section-separator-color);
-  --record-item-hover-bg: var(--secondary-bg-color);
-  --record-header-color: var(--text-color);
-  --record-comment-color: var(--hint-color);
-  --time-label-bg: var(--button-color);
-  --time-label-color: var(--button-text-color);
+  color: var(--text-color); /* Цвет текста сообщения */
 }
 
 .records-list {
@@ -27,7 +19,7 @@
   margin: 0 auto;
   max-width: 400px;
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--secondary-bg-color); /* Цвет фона списка записей */
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -44,8 +36,8 @@
   padding: 15px 20px;
   margin-bottom: 10px;
   border-radius: 8px;
-  background-color: var(--record-item-bg);
-  border: 1px solid var(--record-item-border);
+  background-color: var(--bg-color); /* Цвет фона элемента записи */
+  border: 1px solid var(--section-separator-color); /* Цвет границы */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
@@ -59,23 +51,23 @@
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  color: var(--record-header-color);
+  color: var(--text-color); /* Цвет текста заголовка записи */
 }
 
 .record-time-label {
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 12px;
-  background-color: var(--time-label-bg);
+  background-color: var(--button-color); /* Цвет фона метки времени */
   font-weight: bold;
-  color: var(--time-label-color);
+  color: var(--button-text-color); /* Цвет текста метки времени */
 }
 
 .record-comment {
   display: none;
   margin-top: 10px;
   font-size: 12px;
-  color: var(--record-comment-color);
+  color: var(--hint-color); /* Цвет текста комментария */
   animation: fadeIn 0.3s ease;
 }
 
@@ -94,15 +86,6 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* Стили для кнопки добавления */
 .icon-button {
   animation: pulse 1.5s infinite;
@@ -113,6 +96,8 @@
   border-radius: 50px;
   padding: 9px;
   margin-top: 20px;
+  background-color: var(--button-color); /* Цвет кнопки */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .icon-button img {
@@ -124,25 +109,25 @@
 /* Анимация пульсации */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(238, 105, 169, 0.8); /* Начальный эффект (светящийся контур) */
+    box-shadow: 0 0 0 0 rgba(22, 138, 205, 0.8); /* Используем var(--link-color) с альфа-каналом */
   }
   50% {
-    box-shadow: 0 0 10px 10px rgba(238, 105, 169, 0); /* Средний этап (свет исчезает) */
+    box-shadow: 0 0 10px 10px rgba(22, 138, 205, 0); /* Свет затухает */
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(238, 105, 169, 0.8); /* Завершающий этап */
+    box-shadow: 0 0 0 0 rgba(22, 138, 205, 0.8); /* Восстановление */
   }
 }
 
 /* Стили для времени */
 .time {
-  color: #ee69a9;
+  color: var(--accent-text-color); /* Цвет времени */
   font-weight: bold;
 }
 
 .time .hours,
 .time .minutes {
-  color: inherit; /* Наследуем розовый цвет */
+  color: inherit; /* Наследуем цвет акцента */
 }
 
 .time .colon {
