@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import Modal from "./EditModal";
 
 function RecordsList({ records }) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openRecord, setOpenRecord] = useState(null); // Состояние для отслеживания открытой записи
 
-  const toggleComment = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const openModal = (record) => {
+    setOpenRecord(record); // Открываем модальное окно и передаем запись
+  };
+
+  const closeModal = () => {
+    setOpenRecord(null); // Закрываем модальное окно
   };
 
   return (
@@ -13,19 +18,18 @@ function RecordsList({ records }) {
         {records.map((record, index) => (
           <li
             key={index}
-            className={`record-item ${openIndex === index ? "open" : ""}`}
-            onClick={() => toggleComment(index)}
+            className="record-item"
+            onClick={() => openModal(record)}
           >
             <div className="record-header">
               <span className="record-time-label">{record.record_time}</span>
               <span>{record.client_name}</span>
             </div>
-            {record.comment && (
-              <div className="record-comment">{record.comment}</div>
-            )}
           </li>
         ))}
       </ul>
+
+      {openRecord && <Modal record={openRecord} closeModal={closeModal} />}
     </div>
   );
 }
