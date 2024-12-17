@@ -3,17 +3,27 @@ import React, { useState, forwardRef } from "react";
 const TimeInput = forwardRef(({ error, ...props }, ref) => {
   const [isSelectorVisible, setIsSelectorVisible] = useState(false);
   const [selectedTime, setSelectedTime] = useState("");
+  const [isInputActive, setIsInputActive] = useState(false);
 
   const handleTimeChange = (e) => {
     setSelectedTime(e.target.value);
-    setIsSelectorVisible(false); // Скрываем селектор после выбора времени
+  };
+
+  const handleBlur = () => {
+    if (selectedTime) {
+      setIsSelectorVisible(false);
+    }
+    setIsInputActive(false);
+  };
+
+  const handleFocus = () => {
+    setIsInputActive(true);
   };
 
   return (
     <div className="input-field">
       {!isSelectorVisible ? (
         selectedTime ? (
-          // Если время выбрано, отображаем его
           <div
             className="selected-time"
             onClick={() => setIsSelectorVisible(true)}
@@ -21,7 +31,6 @@ const TimeInput = forwardRef(({ error, ...props }, ref) => {
             {selectedTime} <span className="edit-text">(Изменить)</span>
           </div>
         ) : (
-          // Если время не выбрано, показываем кнопку
           <button
             type="button"
             onClick={() => setIsSelectorVisible(true)}
@@ -31,12 +40,14 @@ const TimeInput = forwardRef(({ error, ...props }, ref) => {
           </button>
         )
       ) : (
-        // Если селектор активен, показываем input для выбора времени
         <input
           type="time"
           ref={ref}
           {...props}
+          value={selectedTime}
           onChange={handleTimeChange}
+          onBlur={handleBlur}
+          onFocus={handleFocus}
           autoFocus
           required
         />
