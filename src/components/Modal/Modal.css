@@ -46,33 +46,33 @@ h2 {
   color: var(--text-color);
 }
 
-/* Улучшенная стилизация инпутов */
+/* стилизация инпутов */
 .input-field {
-  margin-bottom: 1rem; /* Увеличение отступа для лучшего восприятия на мобильных */
+  margin-bottom: 1rem;
 }
 
 .input-field label {
   display: block;
-  margin-bottom: 0.5rem; /* Увеличение отступа */
-  font-size: 1rem; /* Используем относительный размер шрифта */
-  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  color: var(--accent-text-color);
+  font-size: 1.1rem;
 }
 
 .input-field input {
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--section-separator-color);
-  border-radius: 8px; /* Немного округляем углы для плавности */
-  color: var(--text-color);
-  font-size: 1rem; /* Используем относительный размер шрифта */
-  width: 100%; /* Делаем инпуты на всю ширину контейнера */
+  border-radius: 8px;
+  color: var(--accent-text-color);
+  width: 90%;
   outline: none;
-  padding: 1rem; /* Увеличиваем отступ внутри инпута */
+  font-size: 1.2rem;
+  padding: 1.2rem;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .input-field input:focus {
-  border-color: var(--accent-text-color); /* Цвет при фокусе */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Легкий эффект тени при фокусе */
+  border-color: var(--accent-text-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .input-field input:-webkit-autofill {
@@ -82,18 +82,7 @@ h2 {
 
 .input-field input::placeholder {
   color: var(--hint-color);
-  font-size: 0.9rem; /* Немного уменьшаем размер шрифта для подсказки */
-}
-
-/* Для мобильных устройств инпуты должны быть легче доступными */
-@media (max-width: 768px) {
-  .input-field input {
-    font-size: 1.2rem; /* Увеличиваем шрифт на мобильных устройствах */
-    padding: 1.2rem; /* Увеличиваем отступы */
-  }
-  .input-field label {
-    font-size: 1.1rem; /* Немного увеличиваем размер шрифта для label */
-  }
+  font-size: 0.9rem;
 }
 
 .modal-buttons-container {
