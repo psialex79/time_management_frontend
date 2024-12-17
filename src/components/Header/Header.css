@@ -1,5 +1,5 @@
 .header {
-  align-items: center;
+  align-items: end;
   border-bottom: 2px solid var(--accent-text-color);
   top: 0;
   display: flex;
