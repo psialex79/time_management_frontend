@@ -10,6 +10,14 @@
     <link rel="icon" href="/favicon.ico" />
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.Telegram && window.Telegram.WebApp) {
+          window.Telegram.WebApp.expand();
+        }
+      });
+    </script>
+
     <title>My time</title>
   </head>
   <body>
