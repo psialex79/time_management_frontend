@@ -22,10 +22,8 @@ function Modal({ isOpen, onClose }) {
       return;
     }
 
-    setError(""); // Сброс ошибки
-    setIsSubmitting(true); // Блокируем кнопку
-
-    onClose(); // Закрываем модальное окно сразу
+    setError("");
+    setIsSubmitting(true);
 
     const formData = { date, time, name };
 
@@ -36,11 +34,12 @@ function Modal({ isOpen, onClose }) {
       }
 
       await sendFormData(formData);
-      window.location.reload(); // Перезагружаем страницу для обновления данных
+      onClose();
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
+      setError("Произошла ошибка при отправке данных. Попробуйте снова.");
     } finally {
-      setIsSubmitting(false); // Разблокируем кнопку (если потребуется)
+      setIsSubmitting(false);
     }
   };
 
@@ -59,12 +58,9 @@ function Modal({ isOpen, onClose }) {
 
         <div className="modal-buttons-container">
           <button className="modal-close-btn" onClick={onClose}>
-            х
+            ✕
           </button>
-          <SubmitButton
-            onClick={handleSubmit}
-            disabled={isSubmitting} // Передаём состояние блокировки
-          />
+          <SubmitButton onClick={handleSubmit} disabled={isSubmitting} />
         </div>
       </div>
     </div>
