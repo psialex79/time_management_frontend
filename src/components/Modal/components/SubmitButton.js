@@ -1,15 +1,11 @@
 import React from "react";
-import handShakeIcon from "../../../icons/check_mark_pink.png";
 
-function SubmitButton({ onClick, disabled }) {
+function SubmitButton({ type = "button", onClick, disabled }) {
   return (
     <button
+      type={type}
       className="submit-button"
-      onClick={(e) => {
-        if (!disabled) {
-          onClick(e);
-        }
-      }}
+      onClick={onClick}
       disabled={disabled}
     >
       <img src={handShakeIcon} alt="Отправить" className="submit-icon" />
