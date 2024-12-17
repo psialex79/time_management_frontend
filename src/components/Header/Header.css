@@ -8,6 +8,7 @@
   width: 100%;
   background-color: var(--bg-color);
   z-index: 1000;
+  margin-top: 10%;
 }
 
 .header-title {

@@ -8,6 +8,7 @@
   position: fixed;
   bottom: 10px;
   z-index: 1000;
+  margin-bottom: 5%;
 }
 
 .footer-text {
