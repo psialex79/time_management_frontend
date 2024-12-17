@@ -12,7 +12,9 @@ function Modal({ isOpen, onClose }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
+    setValue,
+    watch,
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -38,10 +40,14 @@ function Modal({ isOpen, onClose }) {
           <DateInput
             {...register("date", { required: "Укажите дату." })}
             error={errors.date?.message}
+            value={watch("date")}
+            onChange={(e) => setValue("date", e.target.value)}
           />
           <TimeInput
             {...register("time", { required: "Укажите время." })}
             error={errors.time?.message}
+            value={watch("time")}
+            onChange={(e) => setValue("time", e.target.value)}
           />
           <NameInput
             {...register("name", { required: "Укажите описание." })}
@@ -52,7 +58,7 @@ function Modal({ isOpen, onClose }) {
             <button className="modal-close-btn" type="button" onClick={onClose}>
               ✕
             </button>
-            <SubmitButton type="submit" />
+            <SubmitButton type="submit" disabled={isSubmitting} />
           </div>
         </form>
 
