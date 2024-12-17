@@ -46,37 +46,33 @@ h2 {
   color: var(--text-color);
 }
 
+/* Улучшенная стилизация инпутов */
 .input-field {
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
+  margin-bottom: 1rem; /* Увеличение отступа для лучшего восприятия на мобильных */
 }
 
 .input-field label {
-  font-size: 16px;
-  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem; /* Увеличение отступа */
+  font-size: 1rem; /* Используем относительный размер шрифта */
   color: var(--text-color);
-  margin-bottom: 8px;
 }
 
 .input-field input {
   background-color: var(--secondary-bg-color);
   border: 1px solid var(--section-separator-color);
-  border-radius: 12px;
+  border-radius: 8px; /* Немного округляем углы для плавности */
   color: var(--text-color);
-  font-size: 16px;
-  width: 100%;
-  padding: 14px 16px;
+  font-size: 1rem; /* Используем относительный размер шрифта */
+  width: 100%; /* Делаем инпуты на всю ширину контейнера */
   outline: none;
-  transition: box-shadow 0.3s ease, border 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem; /* Увеличиваем отступ внутри инпута */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .input-field input:focus {
-  border-color: var(--accent-text-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-text-color); /* Цвет при фокусе */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Легкий эффект тени при фокусе */
 }
 
 .input-field input:-webkit-autofill {
@@ -86,21 +82,18 @@ h2 {
 
 .input-field input::placeholder {
   color: var(--hint-color);
-  font-size: 14px;
+  font-size: 0.9rem; /* Немного уменьшаем размер шрифта для подсказки */
 }
 
-.input-field input:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-.input-field input:disabled {
-  background-color: var(--section-separator-color);
-  color: var(--hint-color);
-  cursor: not-allowed;
-}
-
-.input-field input:invalid {
-  border-color: var(--error-color);
+/* Для мобильных устройств инпуты должны быть легче доступными */
+@media (max-width: 768px) {
+  .input-field input {
+    font-size: 1.2rem; /* Увеличиваем шрифт на мобильных устройствах */
+    padding: 1.2rem; /* Увеличиваем отступы */
+  }
+  .input-field label {
+    font-size: 1.1rem; /* Немного увеличиваем размер шрифта для label */
+  }
 }
 
 .modal-buttons-container {
