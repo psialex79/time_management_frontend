@@ -1,7 +1,7 @@
 import React from "react";
 import "./EditModal.css";
 
-function Modal({ record, closeModal }) {
+function EditModal({ record, closeModal }) {
   return (
     <div className="editmodal-overlay">
       <div className="editmodal-container">
@@ -27,4 +27,4 @@ function Modal({ record, closeModal }) {
   );
 }
 
-export default Modal;
+export default EditModal;

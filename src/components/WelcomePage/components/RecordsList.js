@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Modal from "./EditModal";
+import EditModal from "./EditModal";
 
 function RecordsList({ records }) {
-  const [openRecord, setOpenRecord] = useState(null); // Состояние для отслеживания открытой записи
+  const [openRecord, setOpenRecord] = useState(null);
 
   const openModal = (record) => {
-    setOpenRecord(record); // Открываем модальное окно и передаем запись
+    setOpenRecord(record);
   };
 
   const closeModal = () => {
-    setOpenRecord(null); // Закрываем модальное окно
+    setOpenRecord(null);
   };
 
   return (
@@ -29,7 +29,7 @@ function RecordsList({ records }) {
         ))}
       </ul>
 
-      {openRecord && <Modal record={openRecord} closeModal={closeModal} />}
+      {openRecord && <EditModal record={openRecord} closeModal={closeModal} />}
     </div>
   );
 }
