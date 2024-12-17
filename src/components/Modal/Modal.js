@@ -7,7 +7,7 @@ import { sendFormData } from "../../utils/newMeeting";
 import { getTelegramInitData } from "../../utils/telegramInitData";
 import "./Modal.css";
 
-function Modal({ isOpen, onClose, onRecordAdded }) {
+function Modal({ isOpen, onClose }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
@@ -32,14 +32,7 @@ function Modal({ isOpen, onClose, onRecordAdded }) {
       if (initData) {
         formData.initData = initData;
       }
-
-      const response = await sendFormData(formData);
-      if (response && response.newRecord) {
-        // Обновляем записи через родительскую функцию
-        onRecordAdded(response.newRecord);
-      }
-
-      onClose(); // Закрываем модальное окно
+      await sendFormData(formData);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
       setError("Произошла ошибка при отправке данных. Попробуйте снова.");

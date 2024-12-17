@@ -3,7 +3,7 @@ import IconButton from "../WelcomePage/components/IconButton";
 import Modal from "../Modal/Modal";
 import "./Footer.css";
 
-function Footer({ addNewRecord }) {
+function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -13,11 +13,7 @@ function Footer({ addNewRecord }) {
     <footer className="footer">
       <IconButton onClick={openModal} />
 
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        onRecordAdded={addNewRecord} // Передаём функцию добавления записи
-      />
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </footer>
   );
 }
