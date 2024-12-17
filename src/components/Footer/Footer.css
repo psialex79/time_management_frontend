@@ -1,14 +1,12 @@
 .footer {
-  width: 100%;
+  flex-shrink: 0;
+  height: 60px;
   display: flex;
   align-items: start;
   justify-content: center;
   border-top: 2px solid var(--accent-text-color);
   background-color: var(--bg-color);
-  position: fixed;
-  bottom: 10px;
   z-index: 1000;
-  margin-bottom: 5%;
 }
 
 .footer-text {
