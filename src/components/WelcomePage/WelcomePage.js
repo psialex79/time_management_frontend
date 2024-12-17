@@ -11,7 +11,6 @@ function WelcomePage({ initialRecords }) {
       ) : (
         <p className="free-today-message">Сегодня вы свободны!</p>
       )}
-      <Footer />
     </div>
   );
 }
