@@ -1,7 +1,6 @@
 import React from "react";
 import "./WelcomePage.css";
 import RecordsList from "./components/RecordsList";
-import Footer from "../Footer/Footer";
 
 function WelcomePage({ initialRecords }) {
   return (
