@@ -89,11 +89,10 @@ h2 {
 
 .submit-button {
   border: none;
-  border-radius: 8px;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  background: none;
 }
 
 .submit-button:hover {
@@ -101,9 +100,8 @@ h2 {
 }
 
 .submit-icon {
-  width: 22px;
-  height: 22px;
   fill: var(--button-text-color);
+  height: 22px;
 }
 
 .error-message {

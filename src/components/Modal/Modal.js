@@ -12,10 +12,12 @@ function Modal({ isOpen, onClose }) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
+    onClose();
+
     try {
       const initData = await getTelegramInitData();
       if (initData) {
@@ -50,7 +52,7 @@ function Modal({ isOpen, onClose }) {
             <button className="modal-close-btn" type="button" onClick={onClose}>
               ✕
             </button>
-            <SubmitButton type="submit" disabled={isSubmitting} />
+            <SubmitButton type="submit" />
           </div>
         </form>
 
