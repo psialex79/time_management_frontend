@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
 import NameInput from "./components/NameInput";
@@ -8,36 +9,21 @@ import { getTelegramInitData } from "../../utils/telegramInitData";
 import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [name, setName] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!date || !time || !name) {
-      setError("Пожалуйста, заполните все поля.");
-      return;
-    }
-
-    setError("");
-    setIsSubmitting(true);
-
-    const formData = { date, time, name };
-
+  const onSubmit = async (data) => {
     try {
       const initData = await getTelegramInitData();
       if (initData) {
-        formData.initData = initData;
+        data.initData = initData;
       }
-      await sendFormData(formData);
+      await sendFormData(data);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
-      setError("Произошла ошибка при отправке данных. Попробуйте снова.");
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -46,20 +32,33 @@ function Modal({ isOpen, onClose }) {
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <form>
-          <DateInput value={date} onChange={(e) => setDate(e.target.value)} />
-          <TimeInput value={time} onChange={(e) => setTime(e.target.value)} />
-          <NameInput value={name} onChange={(e) => setName(e.target.value)} />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <DateInput
+            {...register("date", { required: "Укажите дату." })}
+            error={errors.date?.message}
+          />
+          <TimeInput
+            {...register("time", { required: "Укажите время." })}
+            error={errors.time?.message}
+          />
+          <NameInput
+            {...register("name", { required: "Укажите описание." })}
+            error={errors.name?.message}
+          />
+
+          <div className="modal-buttons-container">
+            <button className="modal-close-btn" type="button" onClick={onClose}>
+              ✕
+            </button>
+            <SubmitButton type="submit" disabled={isSubmitting} />
+          </div>
         </form>
 
-        {error && <div className="error-message">{error}</div>}
-
-        <div className="modal-buttons-container">
-          <button className="modal-close-btn" onClick={onClose}>
-            ✕
-          </button>
-          <SubmitButton onClick={handleSubmit} disabled={isSubmitting} />
-        </div>
+        {Object.keys(errors).length > 0 && (
+          <div className="error-message">
+            Пожалуйста, исправьте ошибки в форме.
+          </div>
+        )}
       </div>
     </div>
   );
