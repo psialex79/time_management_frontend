@@ -20,6 +20,7 @@
   width: 100%;
   margin-bottom: 66px;
   border-top: 1px solid var(--accent-text-color);
+  bottom: -100%;
 }
 
 .modal-container.open {
