@@ -28,7 +28,6 @@ body {
   align-items: center;
   background-color: var(--bg-color);
   color: var(--text-color);
-  height: 90vh;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -41,5 +40,4 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
 }
