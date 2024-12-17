@@ -1,13 +1,13 @@
 .header {
-  flex-shrink: 0;
   align-items: end;
-  border-bottom: 2px solid var(--accent-text-color);
-  display: flex;
-  justify-content: center;
   background-color: var(--bg-color);
-  z-index: 1000;
+  border-bottom: 1px solid var(--accent-text-color);
+  display: flex;
+  flex-shrink: 0;
   height: 60px;
+  justify-content: center;
   width: 100%;
+  z-index: 1000;
 }
 
 .header-title {
