@@ -3,7 +3,6 @@ import React, { useState, forwardRef } from "react";
 const TimeInput = forwardRef(({ error, ...props }, ref) => {
   const [isSelectorVisible, setIsSelectorVisible] = useState(false);
   const [selectedTime, setSelectedTime] = useState("");
-  const [isInputActive, setIsInputActive] = useState(false);
 
   const handleTimeChange = (e) => {
     setSelectedTime(e.target.value);
@@ -13,11 +12,6 @@ const TimeInput = forwardRef(({ error, ...props }, ref) => {
     if (selectedTime) {
       setIsSelectorVisible(false);
     }
-    setIsInputActive(false);
-  };
-
-  const handleFocus = () => {
-    setIsInputActive(true);
   };
 
   return (
@@ -47,7 +41,6 @@ const TimeInput = forwardRef(({ error, ...props }, ref) => {
           value={selectedTime}
           onChange={handleTimeChange}
           onBlur={handleBlur}
-          onFocus={handleFocus}
           autoFocus
           required
         />
