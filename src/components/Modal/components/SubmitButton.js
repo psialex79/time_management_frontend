@@ -1,5 +1,5 @@
 import React from "react";
-import handShakeIcon from "../../../icons/check_mark_pink.png";
+import plusManIcon from "../../../icons/plus_man_pink.png";
 
 function SubmitButton({ type = "button", onClick, disabled }) {
   return (
@@ -9,7 +9,7 @@ function SubmitButton({ type = "button", onClick, disabled }) {
       onClick={onClick}
       disabled={disabled}
     >
-      <img src={handShakeIcon} alt="Отправить" className="submit-icon" />
+      <img src={plusManIcon} alt="Отправить" className="submit-icon" />
     </button>
   );
 }
