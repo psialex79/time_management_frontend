@@ -28,7 +28,7 @@ body {
   align-items: center;
   background-color: var(--bg-color);
   color: var(--text-color);
-  height: 100vh;
+  height: 90vh;
   padding: 10px;
   box-sizing: border-box;
 }
