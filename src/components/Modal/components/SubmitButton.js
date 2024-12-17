@@ -1,4 +1,5 @@
 import React from "react";
+import handShakeIcon from "../../../icons/check_mark_pink.png";
 
 function SubmitButton({ type = "button", onClick, disabled }) {
   return (
