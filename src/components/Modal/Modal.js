@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
@@ -17,6 +17,16 @@ function Modal({ isOpen, onClose }) {
     watch,
   } = useForm();
 
+  const [isModalVisible, setIsModalVisible] = useState(isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsModalVisible(true);
+    } else {
+      setTimeout(() => setIsModalVisible(false), 300);
+    }
+  }, [isOpen]);
+
   const onSubmit = async (data) => {
     onClose();
 
@@ -31,11 +41,9 @@ function Modal({ isOpen, onClose }) {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="modal-overlay">
-      <div className="modal-container">
+    <div className={`modal-overlay ${isModalVisible ? "open" : ""}`}>
+      <div className={`modal-container ${isModalVisible ? "open" : ""}`}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <DateInput
             {...register("date", { required: "Укажите дату." })}
