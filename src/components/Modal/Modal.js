@@ -9,6 +9,7 @@ import { getTelegramInitData } from "../../utils/telegramInitData";
 import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
+  const [isOpenClass, setIsOpenClass] = useState(false);
   const {
     register,
     handleSubmit,
@@ -17,13 +18,11 @@ function Modal({ isOpen, onClose }) {
     watch,
   } = useForm();
 
-  const [isModalVisible, setIsModalVisible] = useState(isOpen);
-
   useEffect(() => {
     if (isOpen) {
-      setIsModalVisible(true);
+      setIsOpenClass(true);
     } else {
-      setTimeout(() => setIsModalVisible(false), 300);
+      setIsOpenClass(false);
     }
   }, [isOpen]);
 
@@ -41,9 +40,11 @@ function Modal({ isOpen, onClose }) {
     }
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div className={`modal-overlay ${isModalVisible ? "open" : ""}`}>
-      <div className={`modal-container ${isModalVisible ? "open" : ""}`}>
+    <div className="modal-overlay">
+      <div className={`modal-container ${isOpenClass ? "open" : ""}`}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <DateInput
             {...register("date", { required: "Укажите дату." })}
