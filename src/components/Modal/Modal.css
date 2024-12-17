@@ -14,15 +14,11 @@
 
 .modal-container {
   background-color: var(--bg-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px #0003;
-  margin: 0 10px;
-  max-width: 350px;
-  width: 100%;
+  bottom: 100px;
   padding: 0.9rem;
   position: relative;
-  bottom: -100%;
   transition: bottom 0.3s ease-in-out;
+  width: 100%;
 }
 
 .modal-container.open {
@@ -90,7 +86,7 @@ h2 {
 
 .modal-buttons-container {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   margin-top: 16px;
 }
 
