@@ -1,5 +1,5 @@
 /* App */
-.app-container {
+/* .app-container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   text-align: center;
   background-color: var(--bg-color);
   padding: 20px;
-}
+} */
 
 .app-title {
   font-size: 18px;
