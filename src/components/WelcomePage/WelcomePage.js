@@ -4,7 +4,7 @@ import RecordsList from "./components/RecordsList";
 
 function WelcomePage({ initialRecords }) {
   return (
-    <div className="welcome-container">
+    <div className="main-container">
       {initialRecords.length > 0 ? (
         <RecordsList records={initialRecords} />
       ) : (
