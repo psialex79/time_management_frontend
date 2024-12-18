@@ -40,11 +40,21 @@ function Modal({ isOpen, onClose }) {
     }
   };
 
+  const handleOverlayClick = (e) => {
+    // Закрываем модальное окно, только если клик был по overlay
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className={`modal-container ${isOpenClass ? "open" : ""}`}>
+    <div className="modal-overlay" onClick={handleOverlayClick}>
+      <div
+        className={`modal-container ${isOpenClass ? "open" : ""}`}
+        onClick={(e) => e.stopPropagation()} // Предотвращаем всплытие события
+      >
         <form onSubmit={handleSubmit(onSubmit)}>
           <DateInput
             {...register("date", { required: "Укажите дату." })}
@@ -62,11 +72,7 @@ function Modal({ isOpen, onClose }) {
             {...register("name", { required: "Укажите описание." })}
             error={errors.name?.message}
           />
-
           <div className="modal-buttons-container">
-            <button className="modal-close-btn" type="button" onClick={onClose}>
-              ✕
-            </button>
             <SubmitButton type="submit" disabled={isSubmitting} />
           </div>
         </form>
