@@ -1,5 +1,4 @@
 import React from "react";
-import "../Footer.css";
 import BackIcon from "../../icons/back_icon.png";
 
 function BackIconButton({ onClick }) {
