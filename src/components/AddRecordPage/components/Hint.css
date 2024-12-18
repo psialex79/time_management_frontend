@@ -1,6 +1,5 @@
 .hint {
   background: var(--bg-color);
-  border-radius: 8px;
   color: var(--hint-color);
   font-size: 14px;
   padding: 8px;
