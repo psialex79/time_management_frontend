@@ -36,11 +36,6 @@
   height: 60%;
 }
 
-.icon-button:hover {
-  transform: scale(1.1);
-  background-color: #e0e0e0;
-}
-
 .icon-button:active {
   transform: scale(0.95);
 }

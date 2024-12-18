@@ -23,22 +23,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  justify-content: center;
-  align-items: center;
   background-color: var(--bg-color);
   color: var(--text-color);
-  margin: 0;
   padding: 0;
-  height: 100vh;
   overflow: hidden;
 }
 
-#root {
-  background: var(--secondary-bg-color);
-  color: var(--text-color);
+#root,
+body,
+html {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
