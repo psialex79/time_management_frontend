@@ -68,12 +68,28 @@ h2 {
   outline: none;
   padding: 0.9rem;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  width: 277px;
+  width: 100%;
+  max-width: 277px;
+  box-sizing: border-box;
+  height: 42px;
 }
 
 .input-field input:focus {
   border-color: var(--accent-text-color);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-field input[type="date"],
+.input-field input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input-field input[type="date"]::-webkit-calendar-picker-indicator,
+.input-field input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .input-field input:-webkit-autofill {
@@ -88,8 +104,8 @@ h2 {
 
 .modal-buttons-container {
   display: flex;
-  justify-content: center;
-  margin-top: 16px;
+  justify-content: end;
+  padding-right: 34px;
 }
 
 .submit-button {
