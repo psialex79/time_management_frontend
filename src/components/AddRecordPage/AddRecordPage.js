@@ -51,10 +51,20 @@ function AddRecordPage({ setSubmitHandler, setFormValid }) {
     }
   }, [setSubmitHandler, handleSubmit]);
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className="main-container">
       <div className="add-record-page">
-        <form ref={formRef} className="add-record-form">
+        <form
+          ref={formRef}
+          className="add-record-form"
+          onKeyDown={handleKeyDown}
+        >
           <DateInput
             {...register("date", { required: "Укажите дату." })}
             error={errors.date?.message}
