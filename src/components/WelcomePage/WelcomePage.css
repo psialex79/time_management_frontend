@@ -1,12 +1,8 @@
-/* Shared styles extracted and unified */
 .main-container {
   flex-grow: 1;
   overflow-y: auto;
-  padding: 16px;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background-color: var(--bg-color);
+  width: 100%;
 }
 
 h2 {

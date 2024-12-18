@@ -34,7 +34,7 @@ body {
 }
 
 #root {
-  background: var(--bg-color);
+  background: var(--secondary-bg-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
