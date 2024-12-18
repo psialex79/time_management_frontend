@@ -13,18 +13,17 @@
 
 .modal-container {
   background-color: var(--bg-color);
-  bottom: 100px;
   padding: 0.9rem;
   position: relative;
-  transition: bottom 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   width: 100%;
   margin-bottom: 66px;
   border-top: 1px solid var(--accent-text-color);
-  bottom: -100%;
+  transform: translateY(0);
 }
 
 .modal-container.open {
-  bottom: 0;
+  transform: translateY(0);
 }
 
 .modal-close-btn {

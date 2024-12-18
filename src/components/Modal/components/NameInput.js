@@ -7,7 +7,7 @@ const NameInput = forwardRef(({ error, ...props }, ref) => (
       id="name"
       ref={ref}
       {...props}
-      placeholder="Описание"
+      placeholder="Контакт и комментарий."
       required
     />
     {error && <span className="error-text">{error}</span>}

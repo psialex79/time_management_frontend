@@ -10,6 +10,8 @@ import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
   const [isOpenClass, setIsOpenClass] = useState(false);
+  const [bottomOffset, setBottomOffset] = useState(0);
+
   const {
     register,
     handleSubmit,
@@ -24,6 +26,29 @@ function Modal({ isOpen, onClose }) {
     } else {
       setIsOpenClass(false);
     }
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const viewportHeight = window.innerHeight;
+      const fullHeight = document.documentElement.clientHeight;
+
+      // Сдвигаем модальное окно вверх, если экранная клавиатура открыта
+      if (viewportHeight < fullHeight) {
+        setBottomOffset(fullHeight - viewportHeight);
+      } else {
+        setBottomOffset(0);
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener("resize", handleResize);
+      handleResize(); // Проверяем при открытии модального окна
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [isOpen]);
 
   const onSubmit = async (data) => {
@@ -53,6 +78,7 @@ function Modal({ isOpen, onClose }) {
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div
         className={`modal-container ${isOpenClass ? "open" : ""}`}
+        style={{ transform: `translateY(-${bottomOffset}px)` }}
         onClick={(e) => e.stopPropagation()} // Предотвращаем всплытие события
       >
         <form onSubmit={handleSubmit(onSubmit)}>

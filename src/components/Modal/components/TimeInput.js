@@ -9,6 +9,7 @@ const TimeInput = forwardRef(({ error, value, onChange, ...props }, ref) => {
         value={value || ""}
         onChange={onChange}
         {...props}
+        placeholder="10:00"
         required
       />
       {error && <span className="error-text">{error}</span>}

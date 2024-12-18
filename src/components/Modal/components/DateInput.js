@@ -9,6 +9,7 @@ const DateInput = forwardRef(({ error, value, onChange, ...props }, ref) => {
         value={value || ""}
         onChange={onChange}
         {...props}
+        placeholder="29 фев. 2028 г."
         required
       />
       {error && <span className="error-text">{error}</span>}
