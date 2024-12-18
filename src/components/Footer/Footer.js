@@ -4,21 +4,24 @@ import PlusIconButton from "./components/PlusIconButton";
 import BackIconButton from "./components/BackIconButton";
 import "./Footer.css";
 
-function Footer() {
+function Footer({ submitHandler }) {
   const navigate = useNavigate();
-
-  const addRecord = () => {
-    navigate("/add-record");
-  };
 
   const goToWelcomePage = () => {
     navigate("/");
   };
 
+  const handleAddRecord = async () => {
+    if (submitHandler) {
+      await submitHandler();
+    }
+    goToWelcomePage();
+  };
+
   return (
     <footer className="footer">
       <BackIconButton onClick={goToWelcomePage} />
-      <PlusIconButton onClick={addRecord} />
+      <PlusIconButton onClick={handleAddRecord} />
     </footer>
   );
 }

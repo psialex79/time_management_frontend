@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./AddRecordPage.css";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
 import NameInput from "./components/NameInput";
-import SubmitButton from "./components/SubmitButton";
 import { useForm } from "react-hook-form";
 import { sendFormData } from "../../utils/newMeeting";
 import { getTelegramInitData } from "../../utils/telegramInitData";
 
-function AddRecordPage() {
+function AddRecordPage({ setSubmitHandler }) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     setValue,
     watch,
   } = useForm();
@@ -24,16 +23,23 @@ function AddRecordPage() {
         data.initData = initData;
       }
       await sendFormData(data);
-      window.history.back();
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
     }
   };
 
+  const formRef = useRef(null);
+
+  React.useEffect(() => {
+    if (setSubmitHandler) {
+      setSubmitHandler(() => handleSubmit(onSubmit));
+    }
+  }, [setSubmitHandler, handleSubmit]);
+
   return (
     <div className="main-container">
       <div className="add-record-page">
-        <form onSubmit={handleSubmit(onSubmit)} className="add-record-form">
+        <form ref={formRef} className="add-record-form">
           <DateInput
             {...register("date", { required: "Укажите дату." })}
             error={errors.date?.message}
@@ -50,9 +56,6 @@ function AddRecordPage() {
             {...register("name", { required: "Укажите описание." })}
             error={errors.name?.message}
           />
-          <div className="buttons-container">
-            <SubmitButton type="submit" disabled={isSubmitting} />
-          </div>
         </form>
 
         {Object.keys(errors).length > 0 && (

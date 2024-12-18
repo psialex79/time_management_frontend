@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import Header from "./components/Header/Header";
@@ -10,6 +10,7 @@ import { LoadingScreen } from "./components/LoadingScreen/LoadingScreen";
 
 function App() {
   const { backendResponse, loading } = useFetchInitData();
+  const [submitHandler, setSubmitHandler] = useState(null);
 
   if (loading || !backendResponse) {
     return <LoadingScreen />;
@@ -26,9 +27,12 @@ function App() {
               <WelcomePage initialRecords={backendResponse.postAuthResponse} />
             }
           />
-          <Route path="/add-record" element={<AddRecordPage />} />
+          <Route
+            path="/add-record"
+            element={<AddRecordPage setSubmitHandler={setSubmitHandler} />}
+          />
         </Routes>
-        <Footer />
+        <Footer submitHandler={submitHandler} />
       </div>
     </Router>
   );
