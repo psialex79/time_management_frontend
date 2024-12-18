@@ -1,5 +1,5 @@
 import React from "react";
-import BackIcon from "../../icons/back_icon.png";
+import BackIcon from "../../../icons/back_icon.png";
 
 function BackIconButton({ onClick }) {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import PlusIcon from "../../icons/plus_icon.png";
+import PlusIcon from "../../../icons/plus_icon.png";
 
 function PlusIconButton({ onClick }) {
   return (
