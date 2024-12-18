@@ -1,8 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import Header from "./components/Header/Header";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import Footer from "./components/Footer/Footer";
+import AddRecordPage from "./components/AddRecordPage/AddRecordPage";
 import { useFetchInitData } from "./hooks/useFetchInitData";
 import { LoadingScreen } from "./components/LoadingScreen/LoadingScreen";
 
@@ -14,11 +16,21 @@ function App() {
   }
 
   return (
-    <div className="app-container">
-      <Header />
-      <WelcomePage initialRecords={backendResponse.postAuthResponse} />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app-container">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <WelcomePage initialRecords={backendResponse.postAuthResponse} />
+            }
+          />
+          <Route path="/add-record" element={<AddRecordPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

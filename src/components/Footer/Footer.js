@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import IconButton from "../WelcomePage/components/IconButton";
-import Modal from "../Modal/Modal";
 import "./Footer.css";
 
 function Footer() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const addRecord = () => {
+    navigate("/add-record");
+  };
 
   return (
     <footer className="footer">
-      <IconButton onClick={openModal} />
-      <Modal isOpen={isModalOpen} onClose={closeModal} />
+      <IconButton onClick={addRecord} />
     </footer>
   );
 }
