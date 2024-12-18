@@ -10,7 +10,7 @@ import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
   const [isOpenClass, setIsOpenClass] = useState(false);
-  const [bottomOffset, setBottomOffset] = useState(66);
+  const { bottomOffset } = useContext(KeyboardContext);
 
   const {
     register,
@@ -26,29 +26,6 @@ function Modal({ isOpen, onClose }) {
     } else {
       setIsOpenClass(false);
     }
-  }, [isOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const viewportHeight = window.innerHeight;
-      const fullHeight = document.documentElement.clientHeight;
-
-      // Сдвигаем модальное окно вверх, если экранная клавиатура открыта
-      if (viewportHeight < fullHeight) {
-        setBottomOffset(fullHeight - viewportHeight + 66);
-      } else {
-        setBottomOffset(66);
-      }
-    };
-
-    if (isOpen) {
-      window.addEventListener("resize", handleResize);
-      handleResize(); // Проверяем при открытии модального окна
-    }
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, [isOpen]);
 
   const onSubmit = async (data) => {
