@@ -78,6 +78,7 @@ h2 {
   display: inline-block;
   font-family: Arial, sans-serif;
   width: 300px;
+  padding-top: 1rem;
 }
 
 .records-list ul {

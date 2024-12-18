@@ -9,9 +9,9 @@
 }
 
 .app-title {
-  font-size: 18px;
-  color: var(--text-color);
-  z-index: 2;
-  padding: 10px;
   word-wrap: break-word;
+  color: var(--text-color);
+  font-size: 18px;
+  z-index: 2;
+  margin: auto;
 }

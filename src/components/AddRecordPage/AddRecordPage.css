@@ -7,9 +7,10 @@
 }
 
 .add-record-page {
-  margin: auto;
   background-color: var(--section-bg-color);
+  margin: auto;
   padding-top: 1rem;
+  width: 300px;
 }
 
 .buttons-container {
