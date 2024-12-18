@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import IconButton from "../WelcomePage/components/IconButton";
+import PlusIconButton from "./components/PlusIconButton";
+import BackIconButton from "./components/BackIconButton";
 import "./Footer.css";
 
 function Footer() {
@@ -10,9 +11,14 @@ function Footer() {
     navigate("/add-record");
   };
 
+  const goToWelcomePage = () => {
+    navigate("/");
+  };
+
   return (
     <footer className="footer">
-      <IconButton onClick={addRecord} />
+      <BackIconButton onClick={goToWelcomePage} />
+      <PlusIconButton onClick={addRecord} />
     </footer>
   );
 }
