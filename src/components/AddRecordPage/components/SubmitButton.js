@@ -1,5 +1,5 @@
 import React from "react";
-import plusManIcon from "../../../icons/plus_man_pink.png";
+import plusManIcon from "../../../icons/check_square_icon.png";
 
 function SubmitButton({ type = "button", onClick, disabled }) {
   return (
