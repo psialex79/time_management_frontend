@@ -78,7 +78,7 @@ function Modal({ isOpen, onClose }) {
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div
         className={`modal-container ${isOpenClass ? "open" : ""}`}
-        style={{ transform: `translateY(-${bottomOffset}px)` }}
+        style={{ transform: `translateY(-${bottomOffset + 66}px)` }}
         onClick={(e) => e.stopPropagation()} // Предотвращаем всплытие события
       >
         <form onSubmit={handleSubmit(onSubmit)}>
