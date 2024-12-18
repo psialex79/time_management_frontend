@@ -1,0 +1,16 @@
+.hint {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--hint-text-color);
+  text-align: center;
+  padding: 8px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hint-submitting {
+  background-color: var(--bg-color);
+  color: var(--accent-text-color);
+}

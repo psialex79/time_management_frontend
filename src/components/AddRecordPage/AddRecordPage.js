@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./AddRecordPage.css";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
 import NameInput from "./components/NameInput";
+import Hint from "./components/Hint";
 import { useForm } from "react-hook-form";
 import { sendFormData } from "../../utils/newMeeting";
 import { getTelegramInitData } from "../../utils/telegramInitData";
 
 function AddRecordPage({ setSubmitHandler, setFormValid }) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -17,6 +19,7 @@ function AddRecordPage({ setSubmitHandler, setFormValid }) {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setIsSubmitting(true);
     try {
       const initData = await getTelegramInitData();
       if (initData) {
@@ -25,20 +28,21 @@ function AddRecordPage({ setSubmitHandler, setFormValid }) {
       await sendFormData(data);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const formRef = useRef(null);
 
-  // Проверяем валидность формы
-  const formValues = watch(); // Получаем все значения формы
+  const formValues = watch();
   React.useEffect(() => {
     const isFormValid =
       formValues.date &&
       formValues.time &&
       formValues.name &&
       Object.keys(errors).length === 0;
-    setFormValid(isFormValid); // Устанавливаем статус валидности
+    setFormValid(isFormValid);
   }, [formValues, errors, setFormValid]);
 
   React.useEffect(() => {
@@ -74,6 +78,8 @@ function AddRecordPage({ setSubmitHandler, setFormValid }) {
             Пожалуйста, исправьте ошибки в форме.
           </div>
         )}
+
+        <Hint isSubmitting={isSubmitting} />
       </div>
     </div>
   );
