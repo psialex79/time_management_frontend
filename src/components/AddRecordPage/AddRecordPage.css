@@ -20,3 +20,7 @@
 .modal-close-btn:hover {
   transform: scale(1.2);
 }
+
+.add-record-page {
+  width: 100%;
+}
