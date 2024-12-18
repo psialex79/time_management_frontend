@@ -19,17 +19,17 @@
 }
 
 .icon-button {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #f0f0f0; /* Светлый фон кнопки */
-  display: flex;
   align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid var(--accent-text-color);
+  display: inline-block;
+  display: flex;
+  height: 50px;
   justify-content: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  width: 50px;
+  animation: pulse 1s infinite;
 }
 
 .icon-button img {
@@ -38,23 +38,23 @@
 }
 
 .icon-button:hover {
-  transform: scale(1.1); /* Легкое увеличение */
-  background-color: #e0e0e0; /* Темнее фон при наведении */
+  transform: scale(1.1);
+  background-color: #e0e0e0;
 }
 
 .icon-button:active {
-  transform: scale(0.95); /* Легкое сжатие при клике */
+  transform: scale(0.95);
 }
 
 .icon-button.disabled {
-  opacity: 0.5; /* Сниженная прозрачность */
-  pointer-events: none; /* Отключение событий */
-  cursor: not-allowed; /* Курсор "запрещено" */
-  box-shadow: none; /* Убираем тень для неактивной кнопки */
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .icon-button.disabled img {
-  filter: grayscale(100%); /* Обесцвечиваем иконку */
+  filter: grayscale(100%);
 }
 
 @keyframes pulse {
@@ -65,8 +65,4 @@
   50% {
     transform: scale(1.05);
   }
-}
-
-.icon-button:not(.disabled):hover {
-  animation: pulse 1s infinite; /* Пульсация при наведении */
 }
