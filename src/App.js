@@ -11,6 +11,7 @@ import { LoadingScreen } from "./components/LoadingScreen/LoadingScreen";
 function App() {
   const { backendResponse, loading } = useFetchInitData();
   const [submitHandler, setSubmitHandler] = useState(null);
+  const [isFormValid, setFormValid] = useState(false);
 
   if (loading || !backendResponse) {
     return <LoadingScreen />;
@@ -29,10 +30,15 @@ function App() {
           />
           <Route
             path="/add-record"
-            element={<AddRecordPage setSubmitHandler={setSubmitHandler} />}
+            element={
+              <AddRecordPage
+                setSubmitHandler={setSubmitHandler}
+                setFormValid={setFormValid}
+              />
+            }
           />
         </Routes>
-        <Footer submitHandler={submitHandler} />
+        <Footer submitHandler={submitHandler} isFormValid={isFormValid} />
       </div>
     </Router>
   );

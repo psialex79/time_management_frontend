@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { sendFormData } from "../../utils/newMeeting";
 import { getTelegramInitData } from "../../utils/telegramInitData";
 
-function AddRecordPage({ setSubmitHandler }) {
+function AddRecordPage({ setSubmitHandler, setFormValid }) {
   const {
     register,
     handleSubmit,
@@ -29,6 +29,17 @@ function AddRecordPage({ setSubmitHandler }) {
   };
 
   const formRef = useRef(null);
+
+  // Проверяем валидность формы
+  const formValues = watch(); // Получаем все значения формы
+  React.useEffect(() => {
+    const isFormValid =
+      formValues.date &&
+      formValues.time &&
+      formValues.name &&
+      Object.keys(errors).length === 0;
+    setFormValid(isFormValid); // Устанавливаем статус валидности
+  }, [formValues, errors, setFormValid]);
 
   React.useEffect(() => {
     if (setSubmitHandler) {

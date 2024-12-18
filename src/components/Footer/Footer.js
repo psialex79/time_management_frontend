@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import PlusIconButton from "./components/PlusIconButton";
 import BackIconButton from "./components/BackIconButton";
 import "./Footer.css";
 
-function Footer({ submitHandler }) {
+function Footer({ submitHandler, isFormValid }) {
   const navigate = useNavigate();
-  const location = useLocation(); // Определяем текущий путь
+  const location = useLocation();
 
   const goToWelcomePage = () => {
     navigate("/");
@@ -14,21 +14,22 @@ function Footer({ submitHandler }) {
 
   const handleAddRecord = async () => {
     if (location.pathname === "/add-record") {
-      // Если мы на странице добавления записи
       if (submitHandler) {
-        await submitHandler(); // Выполняем отправку данных
+        await submitHandler();
       }
-      goToWelcomePage(); // Возвращаемся на главную страницу
+      goToWelcomePage();
     } else {
-      // Если мы на главной странице
-      navigate("/add-record"); // Переходим на страницу добавления записи
+      navigate("/add-record");
     }
   };
 
   return (
     <footer className="footer">
       <BackIconButton onClick={goToWelcomePage} />
-      <PlusIconButton onClick={handleAddRecord} />
+      <PlusIconButton
+        onClick={handleAddRecord}
+        isDisabled={location.pathname === "/add-record" && !isFormValid}
+      />
     </footer>
   );
 }
