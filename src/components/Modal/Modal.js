@@ -35,7 +35,7 @@ function Modal({ isOpen, onClose }) {
 
       // Сдвигаем модальное окно вверх, если экранная клавиатура открыта
       if (viewportHeight < fullHeight) {
-        setBottomOffset(fullHeight - viewportHeight);
+        setBottomOffset(fullHeight - viewportHeight + 66);
       } else {
         setBottomOffset(0);
       }
