@@ -10,7 +10,7 @@ import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
   const [isOpenClass, setIsOpenClass] = useState(false);
-  const [bottomOffset, setBottomOffset] = useState(0);
+  const [bottomOffset, setBottomOffset] = useState(66);
 
   const {
     register,
@@ -37,7 +37,7 @@ function Modal({ isOpen, onClose }) {
       if (viewportHeight < fullHeight) {
         setBottomOffset(fullHeight - viewportHeight + 66);
       } else {
-        setBottomOffset(0);
+        setBottomOffset(66);
       }
     };
 
