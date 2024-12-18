@@ -1,13 +1,4 @@
 /* Specific styles for AddRecordPage */
-.modal-container {
-  background-color: var(--bg-color);
-  padding: 0.9rem;
-  transition: transform 0.3s ease-in-out;
-  width: 100%;
-  margin-bottom: 66px;
-  border-top: 1px solid var(--accent-text-color);
-}
-
 .modal-close-btn {
   background: #0000;
   border: none;
@@ -17,10 +8,26 @@
   transition: transform 0.2s ease;
 }
 
-.modal-close-btn:hover {
-  transform: scale(1.2);
-}
-
 .add-record-page {
   width: 100%;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: end;
+  padding-right: 34px;
+}
+
+.submit-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.submit-icon {
+  fill: var(--button-text-color);
+  height: 22px;
 }
