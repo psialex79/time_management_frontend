@@ -12,7 +12,6 @@ function Footer() {
   return (
     <footer className="footer">
       <IconButton onClick={openModal} />
-
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </footer>
   );

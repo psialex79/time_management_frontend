@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import DateInput from "./components/DateInput";
 import TimeInput from "./components/TimeInput";
@@ -6,13 +6,11 @@ import NameInput from "./components/NameInput";
 import SubmitButton from "./components/SubmitButton";
 import { sendFormData } from "../../utils/newMeeting";
 import { getTelegramInitData } from "../../utils/telegramInitData";
-import { KeyboardContext } from "../../App";
+import useKeyboardHandling from "../../hooks/useKeyboardHandling";
 import "./Modal.css";
 
 function Modal({ isOpen, onClose }) {
   const [isOpenClass, setIsOpenClass] = useState(false);
-  const { bottomOffset } = useContext(KeyboardContext);
-
   const {
     register,
     handleSubmit,
@@ -20,6 +18,8 @@ function Modal({ isOpen, onClose }) {
     setValue,
     watch,
   } = useForm();
+
+  useKeyboardHandling();
 
   useEffect(() => {
     if (isOpen) {
@@ -44,7 +44,6 @@ function Modal({ isOpen, onClose }) {
   };
 
   const handleOverlayClick = (e) => {
-    // Закрываем модальное окно, только если клик был по overlay
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -56,8 +55,7 @@ function Modal({ isOpen, onClose }) {
     <div className="modal-overlay" onClick={handleOverlayClick}>
       <div
         className={`modal-container ${isOpenClass ? "open" : ""}`}
-        style={{ transform: `translateY(-${bottomOffset}px)` }}
-        onClick={(e) => e.stopPropagation()} // Предотвращаем всплытие события
+        onClick={(e) => e.stopPropagation()}
       >
         <form onSubmit={handleSubmit(onSubmit)}>
           <DateInput

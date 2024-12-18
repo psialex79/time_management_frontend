@@ -23,7 +23,7 @@
 }
 
 .modal-container.open {
-  transform: translateY(0);
+  bottom: 0;
 }
 
 .modal-close-btn {
