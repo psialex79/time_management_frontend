@@ -1,8 +1,9 @@
 .main-container {
   flex-grow: 1;
   overflow-y: auto;
-  width: 100%;
   text-align: center;
+  width: 100%;
+  background: var(--bg-color);
 }
 
 h2 {
@@ -24,18 +25,16 @@ h2 {
 }
 
 .input-field input {
-  background-color: var(--secondary-bg-color);
+  background-color: var(--section-bg-color);
   border: 1px solid var(--section-separator-color);
-  border-radius: 8px;
+  box-sizing: border-box;
   color: var(--text-color);
   font-size: 0.9rem;
+  height: 42px;
   outline: none;
   padding: 0.9rem;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 100%;
-  max-width: 277px;
-  box-sizing: border-box;
-  height: 42px;
 }
 
 .input-field input:focus {

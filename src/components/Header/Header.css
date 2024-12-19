@@ -1,6 +1,6 @@
 .header {
   align-items: end;
-  background-color: var(--bg-color);
+  background-color: var(--header-bg-color);
   border-bottom: 1px solid var(--accent-text-color);
   display: flex;
   flex-shrink: 0;

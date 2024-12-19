@@ -1,9 +1,5 @@
 .edit-record-page {
-  padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
-  max-width: 400px;
-  margin: 0 auto;
+  background-color: var(--section-bg-color);
 }
 
 .form-group {
