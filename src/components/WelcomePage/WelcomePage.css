@@ -101,10 +101,17 @@ h2 {
 
 .record-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   font-size: 12px;
   color: var(--text-color);
+}
+
+.record-date-label,
+.record-time-label {
+  min-width: 60px;
+  text-align: center;
 }
 
 .record-time-label {
@@ -114,6 +121,7 @@ h2 {
   background-color: var(--button-color);
   font-weight: bold;
   color: var(--button-text-color);
+  margin-left: 10px;
 }
 
 .record-comment {
