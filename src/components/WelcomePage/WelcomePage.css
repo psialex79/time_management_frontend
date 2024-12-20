@@ -7,10 +7,10 @@
 }
 
 h2 {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 16px;
   color: var(--text-color);
+  font-size: 14px;
+  margin: 0 0 1rem 0;
+  text-align: center;
 }
 
 .input-field {
@@ -73,10 +73,10 @@ h2 {
 }
 
 .records-list {
+  background-color: var(--section-bg-color);
   display: inline-block;
   font-family: Arial, sans-serif;
   width: 100%;
-  background-color: var(--section-bg-color);
 }
 
 .records-list ul {
@@ -88,7 +88,6 @@ h2 {
 .record-item {
   background-color: var(--bg-color);
   border: 1px solid var(--section-separator-color);
-  border-radius: 6px;
   cursor: pointer;
   padding: 1rem;
   position: relative;
@@ -100,28 +99,27 @@ h2 {
 }
 
 .record-header {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 12px;
   color: var(--text-color);
+  display: flex;
+  font-size: 12px;
+  width: 100%;
 }
 
 .record-date-label,
 .record-time-label {
-  min-width: 60px;
+  width: 62px;
   text-align: center;
 }
 
 .record-time-label {
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 12px;
   background-color: var(--button-color);
-  font-weight: bold;
+  border-radius: 12px;
   color: var(--button-text-color);
-  margin-left: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 0 1rem;
+  padding: 0.5rem;
 }
 
 .record-comment {

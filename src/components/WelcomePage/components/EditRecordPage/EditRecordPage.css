@@ -1,18 +1,25 @@
 .edit-record-page {
   background-color: var(--section-bg-color);
+  padding: 1rem;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-group label {
+  font-size: 14px;
+  width: 80px;
 }
 
 .form-group input {
-  padding: 0.5rem;
   background: var(--section-bg-color);
   border: 1px solid var(--section-separator-color);
+  padding: 0.5rem;
+  width: 100%;
 }
 
 button {
