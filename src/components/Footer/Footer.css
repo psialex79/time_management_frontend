@@ -1,14 +1,15 @@
 .footer {
+  align-items: center;
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--accent-text-color);
+  display: flex;
   flex-shrink: 0;
   height: 65px;
-  width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--accent-text-color);
-  background-color: var(--bg-color);
-  z-index: 1000;
   position: relative;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 0.5rem;
 }
 
 .footer-text {

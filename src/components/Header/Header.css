@@ -1,6 +1,6 @@
 .header {
   align-items: end;
-  background-color: var(--header-bg-color);
+  background-color: var(--bg-color);
   border-bottom: 1px solid var(--accent-text-color);
   display: flex;
   flex-shrink: 0;
@@ -8,6 +8,7 @@
   justify-content: center;
   width: 100%;
   z-index: 1000;
+  margin-bottom: 0.5rem;
 }
 
 .header-title {

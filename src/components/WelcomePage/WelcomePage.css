@@ -1,9 +1,10 @@
 .main-container {
+  background: var(--bg-color);
   flex-grow: 1;
   overflow-y: auto;
   text-align: center;
-  width: 100%;
-  background: var(--bg-color);
+  width: 96%;
+  border-radius: 6px;
 }
 
 h2 {
