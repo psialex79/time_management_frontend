@@ -34,6 +34,7 @@ function RecordsList({ records }) {
               onClick={() => handleRecordClick(record)}
             >
               <div className="record-header">
+                <span className="record-date-label">{record.record_date}</span>
                 <span className="record-time-label">{record.record_time}</span>
                 <span>{record.client_name}</span>
               </div>

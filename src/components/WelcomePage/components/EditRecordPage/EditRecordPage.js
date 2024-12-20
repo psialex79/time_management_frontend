@@ -17,7 +17,15 @@ function EditRecordPage({ record, onSave, onCancel }) {
       <h2>Редактировать запись</h2>
       <form>
         <div className="form-group">
-          <label>Время записи:</label>
+          <label>Дата:</label>
+          <input
+            type="text"
+            value={editedRecord.record_date}
+            onChange={(e) => handleInputChange("record_date", e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label>Время:</label>
           <input
             type="text"
             value={editedRecord.record_time}
@@ -25,7 +33,7 @@ function EditRecordPage({ record, onSave, onCancel }) {
           />
         </div>
         <div className="form-group">
-          <label>Имя клиента:</label>
+          <label>Описание:</label>
           <input
             type="text"
             value={editedRecord.client_name}
