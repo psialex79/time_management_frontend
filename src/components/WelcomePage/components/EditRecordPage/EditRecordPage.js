@@ -40,11 +40,11 @@ function EditRecordPage({ record, onSave, onCancel }) {
             onChange={(e) => handleInputChange("client_name", e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleSave}>
-          Сохранить
-        </button>
         <button type="button" onClick={onCancel}>
           Отмена
+        </button>
+        <button type="button" onClick={handleSave}>
+          Сохранить
         </button>
       </form>
     </div>
