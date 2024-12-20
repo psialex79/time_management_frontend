@@ -1,7 +1,6 @@
 .footer {
   align-items: center;
   background-color: var(--bg-color);
-  border-top: 1px solid var(--accent-text-color);
   display: flex;
   flex-shrink: 0;
   height: 65px;
