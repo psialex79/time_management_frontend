@@ -4,6 +4,7 @@
   text-align: center;
   width: 96%;
   height: 78vh;
+  border-radius: 16px;
 }
 
 h2 {
@@ -34,6 +35,7 @@ h2 {
   padding: 0.9rem;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 100%;
+  border-radius: 6px;
 }
 
 .input-field input:focus {
@@ -76,6 +78,7 @@ h2 {
   display: inline-block;
   font-family: Arial, sans-serif;
   width: 100%;
+  border-radius: 16px;
 }
 
 .records-list ul {

@@ -1,6 +1,7 @@
 .edit-record-page {
   background-color: var(--section-bg-color);
   padding: 1rem;
+  border-radius: 16px;
 }
 
 .form-group {
@@ -22,6 +23,7 @@
   color: #50a3f6;
   padding: 0.5rem;
   width: 100%;
+  border-radius: 6px;
 }
 
 button {

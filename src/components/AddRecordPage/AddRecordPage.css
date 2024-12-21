@@ -1,4 +1,5 @@
 .add-record-page {
   background-color: var(--section-bg-color);
   padding: 1rem;
+  border-radius: 16px;
 }
