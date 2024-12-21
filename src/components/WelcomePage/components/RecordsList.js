@@ -26,7 +26,7 @@ function RecordsList({ records }) {
     );
 
     upcoming.sort((a, b) => a.timeInMinutes - b.timeInMinutes);
-    passed.sort((a, b) => b.timeInMinutes - a.timeInMinutes);
+    passed.sort((a, b) => a.timeInMinutes - b.timeInMinutes);
 
     return [...upcoming, ...passed];
   }, [records, currentMinutes]);
