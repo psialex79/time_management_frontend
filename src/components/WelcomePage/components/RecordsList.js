@@ -32,7 +32,7 @@ function RecordsList({ records }) {
   }, [records, currentMinutes]);
 
   const getBackgroundColor = (timeInMinutes, index) => {
-    if (timeInMinutes < currentMinutes) return "var(--section-separator-color)";
+    if (timeInMinutes < currentMinutes) return "var(--accent-text-color)";
     if (index === 0) return "var(--bg-color)";
     return "var(--button-color)";
   };
