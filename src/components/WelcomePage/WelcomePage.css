@@ -125,7 +125,7 @@ h2 {
   font-weight: 400;
   margin: 0 0.5rem;
   padding: 0.5rem 0;
-  color: white;
+  color: var(--button-text-color);
 }
 
 .record-comment {
