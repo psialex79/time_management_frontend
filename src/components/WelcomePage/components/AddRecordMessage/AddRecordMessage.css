@@ -1,0 +1,20 @@
+.add-record-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.add-record-text {
+  font-size: 16px;
+  color: var(--hint-color);
+  line-height: 1.5;
+}
+
+.add-icon {
+  font-weight: bold;
+  color: var(--button-color);
+}

@@ -3,12 +3,12 @@
   background-color: var(--bg-color);
   display: flex;
   flex-shrink: 0;
-  height: 65px;
   justify-content: space-between;
+  margin: 0.5rem;
   position: relative;
-  width: 100%;
+  width: 96%;
   z-index: 1000;
-  margin-top: 0.5rem;
+  border-radius: 6px;
 }
 
 .footer-text {
@@ -27,6 +27,7 @@
   height: 50px;
   justify-content: center;
   width: 50px;
+  margin: 0.5rem;
 }
 
 .icon-button img {
