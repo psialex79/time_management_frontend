@@ -52,14 +52,6 @@ function EditRecordPage({ record, onSave, onCancel }) {
             onChange={(e) => handleInputChange("client_name", e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label>Комментарий:</label>
-          <input
-            type="text"
-            value={editedRecord.comment || ""}
-            onChange={(e) => handleInputChange("comment", e.target.value)}
-          />
-        </div>
         <button type="button" onClick={onCancel}>
           Отмена
         </button>
