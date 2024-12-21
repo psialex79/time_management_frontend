@@ -121,9 +121,7 @@ h2 {
 .record-time-label {
   background-color: var(--button-color);
   border-radius: 12px;
-  color: var(--button-text-color);
   font-size: 10px;
-  font-weight: 700;
   margin: 0 1rem;
   padding: 0.5rem;
 }
