@@ -29,10 +29,11 @@
 
 /* Стрелка */
 .arrow {
-  width: 15px;
-  height: 15px;
-  border-left: 3px solid var(--hint-color);
-  border-bottom: 3px solid var(--hint-color);
+  border-bottom: 2px solid #50a3f6;
+  border-left: 2px solid #50a3f6;
+  height: 10px;
+  width: 10px;
+  transform: rotate(-45deg);
 }
 
 /* Анимация для контейнера (если требуется движение) */
@@ -45,9 +46,9 @@
     transform: translate(-50%, 0) rotate(-45deg);
   }
   40% {
-    transform: translate(-50%, -10px) rotate(-45deg);
+    transform: translate(-50%, -4px) rotate(-45deg);
   }
   60% {
-    transform: translate(-50%, -5px) rotate(-45deg);
+    transform: translate(-50%, -2px) rotate(-45deg);
   }
 }
