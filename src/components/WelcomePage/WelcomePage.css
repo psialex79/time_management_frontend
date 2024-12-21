@@ -7,10 +7,9 @@
 }
 
 h2 {
-  color: var(--text-color);
+  color: var(--section-header-text-color);
   font-size: 14px;
-  margin: 0 0 1rem 0;
-  text-align: center;
+  margin: 0 0 1rem;
 }
 
 .input-field {
