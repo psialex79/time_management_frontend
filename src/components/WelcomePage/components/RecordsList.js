@@ -33,7 +33,7 @@ function RecordsList({ records }) {
 
   const getBackgroundColor = (timeInMinutes, index) => {
     if (timeInMinutes < currentMinutes) return "var(--section-separator-color)";
-    if (index === 0) return "#88F20D";
+    if (index === 0) return "var(--bg-color)";
     return "var(--button-color)";
   };
 
