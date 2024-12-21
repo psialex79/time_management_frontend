@@ -1,32 +1,4 @@
-.modal-close-btn {
-  border: none;
-  color: var(--accent-text-color);
-  cursor: pointer;
-  font-size: 22px;
-  transition: transform 0.2s ease;
-}
-
 .add-record-page {
   background-color: var(--section-bg-color);
   padding: 1rem;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: end;
-  padding-right: 34px;
-}
-
-.submit-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  padding-top: 5px;
-}
-
-.submit-icon {
-  fill: var(--button-text-color);
-  height: 22px;
 }

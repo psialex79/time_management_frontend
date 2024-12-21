@@ -8,9 +8,3 @@
   width: 100%;
   z-index: 1000;
 }
-
-.header-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--text-color);
-}

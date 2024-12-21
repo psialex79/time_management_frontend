@@ -11,13 +11,6 @@
   z-index: 1000;
 }
 
-.footer-text {
-  color: var(--text-color);
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 0 10px;
-}
-
 .icon-button {
   align-items: center;
   border-radius: 50%;
