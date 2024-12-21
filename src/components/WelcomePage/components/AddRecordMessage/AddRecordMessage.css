@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin: 50% 0;
+  margin: 50% 0%;
   position: relative;
 }
 
@@ -12,26 +12,37 @@
   font-size: 16px;
   color: var(--hint-color);
   line-height: 1.5;
-  margin-bottom: 16px;
 }
 
-.animated-arrow {
-  width: 24px;
-  height: 24px;
+.arrow-container {
+  position: absolute;
+  bottom: -80px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
   border-left: 2px solid var(--hint-color);
   border-bottom: 2px solid var(--hint-color);
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   animation: bounce 1.5s infinite;
-  position: absolute;
-  bottom: -50px;
 }
 
 @keyframes bounce {
   0%,
+  20%,
+  50%,
+  80%,
   100% {
-    transform: translateY(0) rotate(45deg);
+    transform: rotate(-45deg) translateY(0);
   }
-  50% {
-    transform: translateY(-10px) rotate(45deg);
+  40% {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+  60% {
+    transform: rotate(-45deg) translateY(-5px);
   }
 }
