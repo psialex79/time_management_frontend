@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import PlusIconButton from "./components/PlusIconButton";
-import BackIconButton from "./components/BackIconButton";
+import HomeIconButton from "./components/HomeIconButton";
 import CalendarIconButton from "./components/CalendarIconButton";
 import "./Footer.css";
 
@@ -40,7 +40,7 @@ function Footer({ submitHandler, isFormValid }) {
 
   return (
     <footer className="footer">
-      <BackIconButton onClick={goToWelcomePage} />
+      <HomeIconButton onClick={goToWelcomePage} />
       <CalendarIconButton onClick={goToCalendarPage} />
       <PlusIconButton
         onClick={handleAddRecord}
