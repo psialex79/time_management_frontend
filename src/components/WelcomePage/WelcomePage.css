@@ -1,9 +1,9 @@
 .main-container {
-  border-radius: 6px;
   flex-grow: 1;
   overflow-y: auto;
   text-align: center;
   width: 96%;
+  height: 78vh;
 }
 
 h2 {
