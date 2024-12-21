@@ -1,11 +1,10 @@
 .add-record-message {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100%;
-  padding: 20px;
   text-align: center;
+  margin: 50% 0%;
 }
 
 .add-record-text {

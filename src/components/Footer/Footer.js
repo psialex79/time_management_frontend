@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import PlusIconButton from "./components/PlusIconButton";
+import WritingIconButton from "./components/WritingIconButton";
 import HomeIconButton from "./components/HomeIconButton";
 import CalendarIconButton from "./components/CalendarIconButton";
 import "./Footer.css";
@@ -42,7 +42,7 @@ function Footer({ submitHandler, isFormValid }) {
     <footer className="footer">
       <HomeIconButton onClick={goToWelcomePage} />
       <CalendarIconButton onClick={goToCalendarPage} />
-      <PlusIconButton
+      <WritingIconButton
         onClick={handleAddRecord}
         isDisabled={
           isSubmitting || (location.pathname === "/add-record" && !isFormValid)
