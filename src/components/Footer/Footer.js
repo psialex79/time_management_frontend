@@ -41,13 +41,13 @@ function Footer({ submitHandler, isFormValid }) {
   return (
     <footer className="footer">
       <HomeIconButton onClick={goToWelcomePage} />
-      <CalendarIconButton onClick={goToCalendarPage} />
       <WritingIconButton
         onClick={handleAddRecord}
         isDisabled={
           isSubmitting || (location.pathname === "/add-record" && !isFormValid)
         }
       />
+      <CalendarIconButton onClick={goToCalendarPage} />
     </footer>
   );
 }
