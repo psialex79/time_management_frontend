@@ -4,7 +4,7 @@
   border-radius: 16px;
   display: flex;
   flex-shrink: 0;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0.5rem 0.5rem 26px;
   position: relative;
   width: 96%;
