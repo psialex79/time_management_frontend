@@ -13,12 +13,11 @@
   line-height: 1.5;
 }
 
-/* Контейнер для стрелки */
 .arrow-container {
-  position: fixed; /* Фиксируем контейнер относительно окна */
-  bottom: 10%; /* Смещение вверх от футера */
-  left: 50%; /* Центруем по горизонтали */
-  transform: translateX(-50%) rotate(-45deg); /* Вращаем весь контейнер */
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +26,6 @@
   animation: bounce 1s infinite;
 }
 
-/* Стрелка */
 .arrow {
   border-bottom: 2px solid #50a3f6;
   border-left: 2px solid #50a3f6;
@@ -36,7 +34,6 @@
   transform: rotate(-45deg);
 }
 
-/* Анимация для контейнера (если требуется движение) */
 @keyframes bounce {
   0%,
   20%,

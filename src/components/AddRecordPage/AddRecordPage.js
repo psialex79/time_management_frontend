@@ -60,6 +60,7 @@ function AddRecordPage({ setSubmitHandler, setFormValid }) {
   return (
     <div className="main-container">
       <div className="add-record-page">
+        <h2>Новая запись.</h2>
         <form
           ref={formRef}
           className="add-record-form"

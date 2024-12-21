@@ -40,3 +40,7 @@ html {
   margin: 0;
   width: 100%;
 }
+
+h2 {
+  color: var(--section-header-text-color);
+}

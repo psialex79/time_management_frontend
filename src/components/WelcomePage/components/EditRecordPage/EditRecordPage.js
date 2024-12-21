@@ -14,7 +14,7 @@ function EditRecordPage({ record, onSave, onCancel }) {
 
   return (
     <div className="edit-record-page">
-      <h2>Редактировать запись</h2>
+      <h2>Редактировать запись.</h2>
       <form>
         <div className="form-group">
           <label>Дата:</label>
